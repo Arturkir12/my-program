@@ -1,0 +1,43 @@
+import React from "react";
+import {
+    Flex,
+    Button,
+    Stack
+} from "@chakra-ui/react"
+
+import {ReactComponent as FaceBookIcon} from "../../assets/svg/FaceBookIcon.svg"
+import {ReactComponent as InstagramIcon} from "../../assets/svg/Instagram.svg"
+import {ReactComponent as LinkedinIcon} from "../../assets/svg/Linkedin.svg"
+
+const Footer = () => {
+    return(
+        <Flex w="full" h="120px"  justifyContent="center" alignItems="center" bgColor="black">
+            <Flex alignItems="center" w="full">
+        <Flex justifyContent="space-around" w="full">
+          <Flex
+            color="white"
+            fontSize="50px"
+            alignItems="center"
+            fontFamily="Jockey One"
+          >
+            LOGO
+          </Flex>
+          <Flex alignItems="center">
+            <Stack direction="row" spacing="10px">
+                <Flex><LinkedinIcon style={{width:"50px",height:"50px"}}/></Flex>
+                <Flex><InstagramIcon style={{width:"50px",height:"50px"}}/></Flex>
+                <Flex><FaceBookIcon style={{width:"50px",height:"50px"}}/></Flex>
+            </Stack>
+          </Flex>
+          <Flex alignItems="center">
+            <Button borderRadius="10px" w="50px" fontSize="14px" fontFamily="Montserrat" color="white" bgColor="#27272a">
+              EN
+            </Button>
+          </Flex>
+        </Flex>
+      </Flex>
+        </Flex>
+    )
+}
+
+export default Footer
