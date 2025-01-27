@@ -1,8 +1,9 @@
 import React from "react";
-import { Flex, Stack } from "@chakra-ui/react";
+import { Flex, Stack,useBreakpointValue } from "@chakra-ui/react";
 import { ReactComponent as CircleIcon } from "../../../assets/svg/Circle.svg";
+import MobileScreenTrust from "./ResponsiveTrust";
 
-const Trust = () => {
+const LargeScreenTrust = () => {
   return (
     <Flex
       justifyContent="center"
@@ -88,4 +89,14 @@ const Trust = () => {
   );
 };
 
-export default Trust;
+const Trust = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+  return (
+    
+    <Flex>
+         {isMobile ? <MobileScreenTrust/> : <LargeScreenTrust/>}
+    </Flex>
+  )
+}
+
+export default Trust

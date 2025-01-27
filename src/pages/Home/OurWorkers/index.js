@@ -4,6 +4,7 @@ import {
     Stack,
     Box,
     Text,
+    useBreakpointValue,
     Accordion,
     AccordionItem,
     AccordionButton,
@@ -17,8 +18,9 @@ import { ReactComponent as CircleIcon } from "../../../assets/svg/Circle3.svg";
 import OfficePhoto1 from "../../../assets/svg/OfficePhoto.svg";
 import OfficePhoto2 from "../../../assets/svg/OfficePhoto2.svg";
 import OfficePhoto3 from "../../../assets/svg/OfficePhoto3.svg";
+import MobileScreenOurWorkers from "./ResponsiveOurWorkers";
 
-const OurWorkers = () => {
+const LargeScreenOurWorkers = () => {
     const photos = [OfficePhoto1, OfficePhoto2, OfficePhoto3];
 
     // Данные о сотрудниках
@@ -121,5 +123,15 @@ const OurWorkers = () => {
     );
 };
 
-export default OurWorkers;
+const OurWorkers = () => {
+    const isMobile = useBreakpointValue({ base: true, md: false });
+    return (
+      
+      <Flex>
+           {isMobile ? <MobileScreenOurWorkers/> : <LargeScreenOurWorkers/>}
+      </Flex>
+    )
+  }
+  
+  export default OurWorkers
 

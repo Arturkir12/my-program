@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Flex, Stack,Button } from "@chakra-ui/react";
+import { Flex, Stack,Button,useBreakpointValue } from "@chakra-ui/react";
 import { ReactComponent as Iconhello } from "../../../assets/svg/3d-holographic-fluid-shape-illustration-b 1.svg";
+import MobileScreenNavbar from "./ResponsiveNavbar";
+import VideoComponent from "../NavbarVideo";
 
-const Navbar = () => {
+const LargeScreenNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const gradientStart =
@@ -29,8 +31,11 @@ const Navbar = () => {
       w="full"
       justifyContent="center"
       alignItems="center"
-      h="840px"
+      h="1540px"
     >
+      <Stack direction="column">
+        <Flex>
+          <Flex>
       <Stack direction="row" spacing="px">
         <Flex
           w="650px"
@@ -51,9 +56,25 @@ const Navbar = () => {
         <Flex transform="scaleX(-1)">
           <Iconhello  style={{width:"700px",height:"700px"}} />
         </Flex>
-      </Stack>  
+      </Stack> 
+      </Flex> 
+      </Flex>
+      <Flex>
+          <VideoComponent/>
+        </Flex>
+      </Stack>
     </Flex>
   );
 };
 
-export default Navbar;
+const Navbar = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+  return (
+    
+    <Flex>
+         {isMobile ? <MobileScreenNavbar/> : <LargeScreenNavbar/>}
+    </Flex>
+  )
+}
+
+export default Navbar

@@ -2,10 +2,12 @@ import React from "react";
 import {
     Flex,
     Stack,
+    useBreakpointValue
 } from "@chakra-ui/react"
+import MobileScreenOurMarketing from "./ResponsiveOurMarketing";
 
 
-const Marketing = () => {
+const LargeScreenOurMarketing = () => {
     return(
         <Flex mt="-109px" justifyContent="center"  alignItems="center" bgColor="#18181b" w="full" h="400px">
             <Stack direction="column">
@@ -27,4 +29,14 @@ const Marketing = () => {
     )
 }
 
-export default Marketing
+const Marketing = () => {
+    const isMobile = useBreakpointValue({ base: true, md: false });
+    return (
+      
+      <Flex>
+           {isMobile ? <MobileScreenOurMarketing/> : <LargeScreenOurMarketing/>}
+      </Flex>
+    )
+  }
+  
+  export default Marketing

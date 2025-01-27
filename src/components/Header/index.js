@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Flex, Stack, useColorModeValue,Button } from "@chakra-ui/react";
+import { useBreakpointValue } from "@chakra-ui/react";
+import MobileScreenHeader from "./ResponsiveHeader";
 
-const Header = () => {
+
+const LargeScreenHeader= () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const bgColor = useColorModeValue("rgba(234, 234, 234, 0.7)", "gray.800");
@@ -113,4 +116,17 @@ const Header = () => {
   );
 };
 
-export default Header;
+
+const Header = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+  return (
+    
+    <Flex>
+         {isMobile ? <MobileScreenHeader/> : <LargeScreenHeader/>}
+    </Flex>
+  )
+}
+
+export default Header
+
+

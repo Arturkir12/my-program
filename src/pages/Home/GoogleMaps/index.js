@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Box,Flex, Text } from "@chakra-ui/react";
+import { Box,Flex, Text,useBreakpointValue } from "@chakra-ui/react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import { motion, AnimatePresence } from "framer-motion";
+import MobileScreenGoogleMaps from "./ResponsiveGoogleMaps";
 
 const mapContainerStyle = {
   width: "500px",
@@ -17,7 +18,7 @@ const center = {
 
 const MotionText = motion(Text);
 
-const GoogleMapsComponent = () => {
+const LargeScreenGoogleMaps = () => {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.none, // Укажите API-ключ здесь
   });
@@ -120,4 +121,14 @@ const GoogleMapsComponent = () => {
   );
 };
 
-export default GoogleMapsComponent;
+const GoogleMapsComponent = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+  return (
+    
+    <Flex>
+         {isMobile ? <MobileScreenGoogleMaps/> : <LargeScreenGoogleMaps/>}
+    </Flex>
+  )
+}
+
+export default GoogleMapsComponent

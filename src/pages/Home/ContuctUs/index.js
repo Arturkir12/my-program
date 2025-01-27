@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex,Button, Stack } from "@chakra-ui/react";
+import { Flex,Button, Stack,useBreakpointValue } from "@chakra-ui/react";
 
 import { ReactComponent as Kub1 } from "../../../assets/svg/Kubek.svg";
 import { ReactComponent as Kub2 } from "../../../assets/svg/Kubek2.svg";
@@ -7,8 +7,9 @@ import { ReactComponent as Kub2 } from "../../../assets/svg/Kubek2.svg";
 import {ReactComponent as PhoneIcon} from "../../../assets/svg/phone.svg"
 import {ReactComponent as LocationIcon} from "../../../assets/svg/pin-location.svg"
 import {ReactComponent as MailIcon} from "../../../assets/svg/Mail.svg"
+import MobileScreenContuctUs from "./ResponsiveContuctUs";
 
-const Contuctus = () => {
+const LargeScreenContuctUs = () => {
 
     const Email = "1234example.com"
     const PhoneNumber = "0123456789"
@@ -147,4 +148,14 @@ const Contuctus = () => {
   );
 };
 
-export default Contuctus;
+const Contuctus = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+  return (
+    
+    <Flex>
+         {isMobile ? <MobileScreenContuctUs/> : <LargeScreenContuctUs/>}
+    </Flex>
+  )
+}
+
+export default Contuctus

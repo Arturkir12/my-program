@@ -2,10 +2,12 @@ import React from "react";
 import {
     Flex,
     Stack,
+    useBreakpointValue
 } from "@chakra-ui/react"
+import MobileScreenAmazingTeam from "./ResponsiveAmazingTeam";
 
 
-const AmazingTeam = () => {
+const LargeScreenAmazingTeam = () => {
     return(
         <Flex justifyContent="center" w="full" h="400" bgColor="#18181b" alignItems="center">
             <Stack direction="column">
@@ -22,4 +24,16 @@ const AmazingTeam = () => {
         </Flex>
     )
 }
-export  default AmazingTeam
+
+
+const AmazingTeam = () => {
+    const isMobile = useBreakpointValue({ base: true, md: false });
+    return (
+      
+      <Flex>
+           {isMobile ? <MobileScreenAmazingTeam/> : <LargeScreenAmazingTeam/>}
+      </Flex>
+    )
+  }
+  
+  export default AmazingTeam
