@@ -3,9 +3,10 @@ import {
     Flex,
     Stack
 } from "@chakra-ui/react"
-
+import { useTranslation } from "react-i18next";
 
 const MobileScreenOurMarketing = () => {
+  const { t } = useTranslation();
     return(
         <Flex>
             <Flex
@@ -17,7 +18,7 @@ const MobileScreenOurMarketing = () => {
   h={{ base: "auto", md: "400px" }}
   py={{ base: "20px", md: "0" }}
 >
-  <Stack direction="column" spacing={4} px="4">
+  <Stack direction="column"  px="4">
     {/* Заголовок */}
     <Flex
       justify="center"
@@ -27,7 +28,7 @@ const MobileScreenOurMarketing = () => {
       fontFamily="Montserrat"
       textAlign="center"
     >
-      PERSONALIZED DIGITAL WORKSPACE
+      {t("our_marketing.title")}
     </Flex>
 
     {/* Основной текст */}
@@ -40,17 +41,17 @@ const MobileScreenOurMarketing = () => {
       color="#e4e4e7"
       justify="center"
     >
-      <Stack direction="column" spacing={3}>
+      <Stack direction="column" >
         <Flex
           justify="center"
           fontSize={{ base: "20px", md: "30px" }}
           color="white"
           textShadow="0 0 0px #fafafa, 0 0 4px #fafafa"
         >
-          Everything you need, anytime, anywhere.
+          {t("our_marketing.subtitle")}
         </Flex>
         <Flex fontSize={{ base: "12px", md: "16px" }} color="#e4e4e7">
-          In a world where focus and flow are increasingly hard to find, we know that simplifying IT makes you more productive, happier, and enhances collaboration. Our digital workspace eliminates IT complexity, centralizes access to tools and resources, streamlines workflows, and strengthens internal communication. We create a workspace tailored to your specific needs, available wherever and whenever you need it.
+        {t("our_marketing.description")}
         </Flex>
       </Stack>
     </Flex>

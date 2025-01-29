@@ -14,6 +14,8 @@ import {
 import GoogleMapsComponent from "../GoogleMaps";
 import PhotoSlider from "./OfficeSlider";
 
+import {ReactComponent as PersonIcon} from "../../../assets/svg/person.svg"
+
 import { ReactComponent as CircleIcon } from "../../../assets/svg/Circle3.svg";
 import OfficePhoto1 from "../../../assets/svg/OfficePhoto.svg";
 import OfficePhoto2 from "../../../assets/svg/OfficePhoto2.svg";
@@ -29,25 +31,25 @@ const LargeScreenOurWorkers = () => {
             name: "Hayk Sargsyan",
             role: "Flutter Developer",
             bio: "Flutter Developer",
-            photo:"none"
+            photo:<PersonIcon/>
         },
         {
             name: "Vahe Martirosyan",
             role: "Software Engineer • ReactJS• NodeJS • MySQL",
             bio: "I specialize in building dynamic, scalable, and responsive web applications. My technical background enables me to efficiently manage database systems, design user-friendly interfaces, and optimize performance across the full stack. Passionate about continuous learning and staying ahead of industry trends, I strive to deliver high-quality solutions that meet both user needs and business goals.",
-            photo: "none"
+            photo: <PersonIcon/>
         },
         {
             name: "Hayk Hovhanisyan",
             role: "Front End Developer",
             bio: "I am a web developer with a year of experience in HTML, CSS, JavaScript, React, Next.js, Redux, and Chakra UI. I develop high-quality, productive, and responsive web applications. In my work, I focus on effective health management, improving productivity, and providing a great user experience. I am ready to use my knowledge to create successful projects and solve complex tasks in your team.",
-            photo: "none"
+            photo: <PersonIcon/>
         },
         {
             name: "Artur Kirakosyan",
             role: "Frontend Developer | React.js Enthusiast | Responsive Design Expert",
             bio: "I am a passionate and efficient Frontend Developer with expertise in creating dynamic, responsive, and user-friendly web interfaces. Proficient in modern technologies like React.js, HTML, CSS (Sass/SCSS), Chakra UI, and Material UI, I deliver visually appealing and highly functional web applications.",
-            photo: "none"
+            photo: <PersonIcon/>
         }
     ];
 
@@ -75,7 +77,7 @@ const LargeScreenOurWorkers = () => {
                             <AccordionButton>
                                 <Box w="400px"  textAlign="left">
                                     <Stack direction="row">
-                                    <Flex borderRadius="10px" justifyContent="center" alignItems="center" w="60px" h="60px" bgColor="red">
+                                    <Flex borderRadius="10px" justifyContent="center" alignItems="center" w="60px" h="60px" bgColor="white">
                                         {member.photo}
                                     </Flex>
                                     <Flex>

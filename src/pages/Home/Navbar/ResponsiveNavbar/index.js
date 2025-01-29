@@ -5,10 +5,11 @@ import {
     Button
 } from "@chakra-ui/react"
 
-
+import { useTranslation } from "react-i18next";
 import VideoComponent from "../../NavbarVideo";
 
 const MobileScreenNavbar = () => {
+  const { t } = useTranslation();
     const [isScrolled, setIsScrolled] = useState(false);
     
       const gradientStart =
@@ -47,13 +48,13 @@ const MobileScreenNavbar = () => {
           <Stack direction="column" spacing="0px">
             <Flex justifyContent="center" w="full">
             <Stack direction="column">
-            <Flex  textAlign="center" justifyContent="center" fontFamily="Jockey One"  color="white" textShadow="0 0 0px #fafafa, 0 0 6px #fafafa" textDecor="underline" fontSize="20px">Your ambitions are our inspiration.</Flex>
-            <Flex justifyContent="center" textAlign="center" fontFamily="Montserrat"  fontWeight="900" background="none" textShadow="none" fontSize="13px" color="#18181b">Welcome to a world where your ideas become reality! We combine passion, innovation, and professionalism to create solutions that shape the future.</Flex>
-            <Flex  justifyContent="center" textAlign="center" letterSpacing="0px"  fontFamily="Roboto" fontWeight="900" fontSize="17px"  color="white" >Let’s build a successful tomorrow together!</Flex>
+            <Flex  textAlign="center" justifyContent="center" fontFamily="Jockey One"  color="white" textShadow="0 0 0px #fafafa, 0 0 6px #fafafa" textDecor="underline" fontSize="20px" >{t("navbar.ambitions")}</Flex>
+            <Flex justifyContent="center" textAlign="center" fontFamily="Montserrat"  fontWeight="900" background="none" textShadow="none" fontSize="13px" color="#18181b">{t("navbar.welcome")}</Flex>
+            <Flex  justifyContent="center" textAlign="center" letterSpacing="0px"  fontFamily="Roboto" fontWeight="900" fontSize="17px"  color="white" >{t("navbar.build_future")}</Flex>
             </Stack>
             </Flex>
             <Flex justifyContent="center" mt="80px">
-              <Button  _hover={{bgColor:"white",color:"#18181b"}}  fontSize="13px" w="130px" fontWeight="500" fontFamily="Montserrat"   color="white" bgColor="#18181b">Let's begin</Button>
+              <Button  _hover={{bgColor:"white",color:"#18181b"}}  fontSize="13px" w="130px" fontWeight="500" fontFamily="Montserrat"   color="white" bgColor="#18181b">{t("navbar.start")}</Button>
             </Flex>
           </Stack>
         </Flex>

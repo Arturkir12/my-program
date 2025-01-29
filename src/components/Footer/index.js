@@ -1,7 +1,6 @@
 import React from "react";
 import {
     Flex,
-    Button,
     Stack,
     useBreakpointValue
 } from "@chakra-ui/react"
@@ -30,9 +29,6 @@ const LargeScreenFooter = () => {
                 <Flex><InstagramIcon style={{width:"50px",height:"50px"}}/></Flex>
                 <Flex><FaceBookIcon style={{width:"50px",height:"50px"}}/></Flex>
                 <Flex justifyContent="center" alignItems="center">
-            <Button borderRadius="10px" w="50px" fontSize="14px" fontFamily="Montserrat" color="white" bgColor="#27272a">
-              EN
-            </Button>
           </Flex>
             </Stack>
           </Flex>

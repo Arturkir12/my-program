@@ -9,14 +9,13 @@ const LargeScreenVideoComponent = () => {
   const videoRef = useRef(null); // Ссылка на видео элемент
 
   return (
-    <Flex w="89vw" h="680px"   justifyContent="center" alignItems="center">
+    <Flex w="full" h="680px" justifyContent="center" alignItems="center">
       <Flex>
       <Box
-       w="1000px"
-       mt="-110px"
+       w="full"
+       h="680px"
       >
         <video
-          style={{borderRadius:"20px"}}
           ref={videoRef}    
           autoPlay
           muted

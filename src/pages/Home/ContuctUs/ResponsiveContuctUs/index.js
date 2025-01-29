@@ -5,13 +5,14 @@ import {
     Stack,
 } from "@chakra-ui/react"
 
-
+import { useTranslation } from "react-i18next";
 
 import {ReactComponent as PhoneIcon} from "../../../../assets/svg/phone.svg"
 import {ReactComponent as LocationIcon} from "../../../../assets/svg/pin-location.svg"
 import {ReactComponent as MailIcon} from "../../../../assets/svg/Mail.svg"
 
 const MobileScreenContuctUs = () => {
+  const { t } = useTranslation();
     const Email = "1234example.com"
     const PhoneNumber = "0123456789"
     const Location = "Example"
@@ -43,7 +44,7 @@ const MobileScreenContuctUs = () => {
           fontFamily="Montserrat"
           textAlign="center"
         >
-          GET IN TOUCH WITH US!
+          {t("contact_us_section.title")}
         </Flex>
 
         {/* Карточка с информацией */}
@@ -67,10 +68,7 @@ const MobileScreenContuctUs = () => {
               fontFamily="Roboto"
               textAlign="center"
             >
-              We're here to help you unlock your business potential through
-              innovative technology solutions. Whether you have questions, need
-              support, or want to discuss your next big project, we're just a
-              message away.
+             {t("contact_us_section.description")}
             </Flex>
 
             {/* Контакты */}
@@ -82,7 +80,7 @@ const MobileScreenContuctUs = () => {
                   ml="10px"
                   fontFamily="Roboto"
                 >
-                  Email:{" "}
+                  {t("contact_us_section.email")}{" "}
                   <Flex
                     ml="5px"
                     color="#27272a"
@@ -99,7 +97,7 @@ const MobileScreenContuctUs = () => {
                   ml="10px"
                   fontFamily="Roboto"
                 >
-                  Phone Number:{" "}
+                  {t("contact_us_section.phone")}{" "}
                   <Flex
                     color="#27272a"
                     ml="5px"
@@ -116,7 +114,7 @@ const MobileScreenContuctUs = () => {
                   ml="10px"
                   fontFamily="Roboto"
                 >
-                  Location:{" "}
+                  {t("contact_us_section.location")}{" "}
                   <Flex
                     ml="5px"
                     color="#27272a"
@@ -145,7 +143,7 @@ const MobileScreenContuctUs = () => {
                   border: "1px solid #9333ea",
                 }}
               >
-                More Information
+                {t("contact_us_section.more_info")}
               </Button>
               <Button
                 w={{ base: "110px", md: "190px" }}
@@ -162,7 +160,7 @@ const MobileScreenContuctUs = () => {
                   border: "1px solid #22d3ee",
                 }}
               >
-                MAP
+                 {t("contact_us_section.map")}
               </Button>
             </Flex>
           </Stack>

@@ -2,7 +2,6 @@ import React from "react";
 import {
     Flex,
     Stack,
-    Button,
 } from "@chakra-ui/react"
 
 import {ReactComponent as FaceBookIcon} from "../../../assets/svg/FaceBookIcon.svg"
@@ -26,18 +25,6 @@ const MobileScreenFooter = () => {
         </Stack>
 
         {/* Кнопка выбора языка */}
-        <Flex alignItems="center">
-          <Button
-            borderRadius="10px"
-            w="50px"
-            fontSize="14px"
-            fontFamily="Montserrat"
-            color="white"
-            bgColor="#27272a"
-          >
-            EN
-          </Button>
-        </Flex>
       </Flex>
     </Flex>
     )

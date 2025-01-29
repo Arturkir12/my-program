@@ -1,42 +1,44 @@
 import React from "react";
-import {
-    Flex,
-    Stack,
-    useBreakpointValue
-} from "@chakra-ui/react"
+import { Flex, Stack, Box, useBreakpointValue } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next"; // импортируем хук для перевода
 import MobileScreenOurMarketing from "./ResponsiveOurMarketing";
 
-
 const LargeScreenOurMarketing = () => {
-    return(
-        <Flex mt="-109px" justifyContent="center"  alignItems="center" bgColor="#18181b" w="full" h="400px">
-            <Stack direction="column">
-            <Flex justify="center" color="#db2777" fontWeight="500" fontSize="16px" fontFamily="Montserrat" >
-            PERSONALIZED DIGITAL WORKSPACE
-            </Flex>
-            <Flex w="800px" textAlign="center" fontFamily="Roboto" fontSize="20px" fontWeight="600" color="#e4e4e7" justify="center">
-            <Stack direction="column">
-            <Flex justify="center" fontSize="30px" color="white" textShadow="0 0 0px #fafafa, 0 0 4px #fafafa">Everything you need, anytime, anywhere.</Flex>
-            <Flex>
-              In a world where focus and flow are increasingly hard to find, we know that simplifying IT makes you more productive, happier, and enhances collaboration. Our digital workspace eliminates IT complexity, centralizes access to tools and resources, streamlines workflows, and strengthens internal communication. We create a workspace tailored to your specific needs, available wherever and whenever you need it.  
-            </Flex>
-            </Stack>
-            </Flex>
-            </Stack>
-            <Flex>
-            </Flex>
-        </Flex>
-    )
-}
+  const { t } = useTranslation(); // инициализируем переводчик
+
+  return (
+    <Flex mt="-109px" justifyContent="center" alignItems="center" bgColor="#18181b" w="full" h="400px">
+      <Stack direction="column"  textAlign="center">
+        <Box>
+          <Flex justify="center" color="#db2777" fontWeight="500" fontSize="16px" fontFamily="Montserrat">
+            {t("our_marketing.title")}
+          </Flex>
+        </Box>
+        <Box w="800px">
+          <Flex direction="column" align="center">
+            <Box>
+              <Flex
+                fontFamily="Roboto" fontWeight="600" justify="center" fontSize="30px" color="white" textShadow="0 0 0px #fafafa, 0 0 4px #fafafa"
+              >
+                {t("our_marketing.subtitle")}
+              </Flex>
+            </Box>
+            <Box>
+              <Flex color="#e4e4e7" fontFamily="Roboto" fontSize="20px" fontWeight="600">
+                {t("our_marketing.description")}
+              </Flex>
+            </Box>
+          </Flex>
+        </Box>
+      </Stack>
+    </Flex>
+  );
+};
 
 const Marketing = () => {
-    const isMobile = useBreakpointValue({ base: true, md: false });
-    return (
-      
-      <Flex>
-           {isMobile ? <MobileScreenOurMarketing/> : <LargeScreenOurMarketing/>}
-      </Flex>
-    )
-  }
-  
-  export default Marketing
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
+  return <Flex>{isMobile ? <MobileScreenOurMarketing /> : <LargeScreenOurMarketing />}</Flex>;
+};
+
+export default Marketing;

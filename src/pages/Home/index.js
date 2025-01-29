@@ -9,7 +9,6 @@ import Contuctus from "./ContuctUs";
 import Trust from "./Trust";
 import OurWorkers from "./OurWorkers";
 import AmazingTeam from "./AmazingTeam";
-import VideoComponent from "./NavbarVideo";
 
 
 
