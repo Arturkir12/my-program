@@ -62,7 +62,7 @@ const LargeScreenOfficeSlider = ({ photos = [] }) => {
     return (
       <Flex align="center" justify="center" p={4} h="200px">
         <Text fontSize="lg" color="gray.500">
-          No photos available
+          No photos availablee
         </Text>
       </Flex>
     );
