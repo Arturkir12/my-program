@@ -7,7 +7,7 @@ const LargeScreenOurMarketing = () => {
   const { t } = useTranslation(); // инициализируем переводчик
 
   return (
-    <Flex mt="-109px" justifyContent="center" alignItems="center" bgColor="#18181b" w="full" h="400px">
+    <Flex  justifyContent="center" alignItems="center" bgColor="#18181b" w="full" h="400px">
       <Stack direction="column"  textAlign="center">
         <Box>
           <Flex justify="center" color="#db2777" fontWeight="500" fontSize="16px" fontFamily="Montserrat">

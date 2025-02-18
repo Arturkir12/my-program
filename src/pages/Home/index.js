@@ -19,9 +19,8 @@ const Home = () => {
                 <Navbar/>
                 <Marketing/>
                 <Contuctus/>
-                <Trust/>
                 <AmazingTeam/>
-                <OurWorkers/>
+                <Trust/>
             </Stack>
         </Flex>
     )

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Flex, Stack, Button, useBreakpointValue } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-import { ReactComponent as Iconhello } from "../../../assets/svg/3d-holographic-fluid-shape-illustration-b 1.svg";
 import MobileScreenNavbar from "./ResponsiveNavbar";
 import VideoComponent from "../NavbarVideo";
 
@@ -33,9 +32,13 @@ const LargeScreenNavbar = () => {
       w="full"
       justifyContent="center"
       alignItems="center"
-      h="1540px"
+      h="800px"
+      position="relative"
+      overflow="hidden"
     >
-      <Stack direction="column">
+      {/* Перевернутая волна белого цвета */}
+
+      <Stack direction="column" zIndex={2}>
         <Flex justify="center">
           <Flex>
             <Stack direction="row" spacing="px">
@@ -47,17 +50,17 @@ const LargeScreenNavbar = () => {
                 alignItems="center"
               >
                 <Stack direction="column" spacing="0px">
-                  <Flex 
-                    fontFamily="Montserrat"
-                    color="white"
+                  <Flex
+                    letterSpacing="0px"
+                    w="500px"
+                    fontFamily="Roboto"
                     fontWeight="900"
-                    textShadow="0 0 0px #fafafa, 0 0 6px #fafafa"
-                    textDecor="underline"
-                    fontSize="20px"
+                    fontSize="40px"
+                    color="white"
                   >
-                    {t("navbar.ambitions")}
+                    {t("navbar.build_future")}
                   </Flex>
-                  <Flex 
+                  <Flex
                     fontFamily="Montserrat"
                     w="440px"
                     fontWeight="900"
@@ -68,18 +71,8 @@ const LargeScreenNavbar = () => {
                   >
                     {t("navbar.welcome")}
                   </Flex>
-                  <Flex 
-                    letterSpacing="0px"
-                    w="500px"
-                    fontFamily="Roboto"
-                    fontWeight="900"
-                    fontSize="40px"
-                    color="white"
-                  >
-                    {t("navbar.build_future")}
-                  </Flex>
                   <Flex mt="80px">
-                    <Button 
+                    <Button
                       _hover={{ bgColor: "white", color: "#18181b" }}
                       fontSize="13px"
                       w="200px"
@@ -93,14 +86,11 @@ const LargeScreenNavbar = () => {
                   </Flex>
                 </Stack>
               </Flex>
-              <Flex transform="scaleX(-1)">
-                <Iconhello style={{ width: "700px", height: "700px" }} />
+              <Flex mt="320px">
+                <VideoComponent width="700px" height="700px" />
               </Flex>
             </Stack>
           </Flex>
-        </Flex>
-        <Flex>
-          <VideoComponent />
         </Flex>
       </Stack>
     </Flex>
@@ -113,4 +103,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

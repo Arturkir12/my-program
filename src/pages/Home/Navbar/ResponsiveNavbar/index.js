@@ -48,9 +48,8 @@ const MobileScreenNavbar = () => {
           <Stack direction="column" spacing="0px">
             <Flex justifyContent="center" w="full">
             <Stack direction="column">
-            <Flex  textAlign="center" justifyContent="center" fontFamily="Jockey One"  color="white" textShadow="0 0 0px #fafafa, 0 0 6px #fafafa" textDecor="underline" fontSize="20px" >{t("navbar.ambitions")}</Flex>
-            <Flex justifyContent="center" textAlign="center" fontFamily="Montserrat"  fontWeight="900" background="none" textShadow="none" fontSize="13px" color="#18181b">{t("navbar.welcome")}</Flex>
             <Flex  justifyContent="center" textAlign="center" letterSpacing="0px"  fontFamily="Roboto" fontWeight="900" fontSize="17px"  color="white" >{t("navbar.build_future")}</Flex>
+            <Flex justifyContent="center" textAlign="center" fontFamily="Montserrat"  fontWeight="900" background="none" textShadow="none" fontSize="13px" color="#18181b">{t("navbar.welcome")}</Flex>
             </Stack>
             </Flex>
             <Flex justifyContent="center" mt="80px">

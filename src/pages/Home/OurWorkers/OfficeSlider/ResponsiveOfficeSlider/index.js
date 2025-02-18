@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Box, IconButton, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -15,12 +15,12 @@ const MotionBox = motion(Box);
 const MotionText = motion(Text);
 
 const MobileScreenOfficeSilder = () => {
-    const photos = [
-        <OfficePhoto1 />,
-        <OfficePhoto2 />,
-        <OfficePhoto3 />,
-      ];
-    const [currentIndex, setCurrentIndex] = useState(0);
+  const photos = [
+    <OfficePhoto1 />,
+    <OfficePhoto2 />,
+    <OfficePhoto3 />,
+  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [showText, setShowText] = useState(false);
 
   // Размеры элементов в зависимости от ширины экрана
@@ -51,8 +51,8 @@ const MobileScreenOfficeSilder = () => {
     );
   }
 
-    return(
-        <Flex
+  return (
+    <Flex
       id="photo-slider"
       h="200px"
       align="center"
@@ -81,7 +81,7 @@ const MobileScreenOfficeSilder = () => {
         w="300px"
         h="300px"
         overflow="hidden"
-        borderRadius="20px"
+        borderRadius="20px" // Радиус контейнера
         position="relative"
         initial={{ opacity: 0.8, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -91,7 +91,12 @@ const MobileScreenOfficeSilder = () => {
           <motion.img
             src={photos[currentIndex]}
             alt={`Photo ${currentIndex + 1}`}
-            style={{ objectFit: "cover", width: "100%", height: "100%" }}
+            style={{
+              objectFit: "cover",
+              width: "100%",
+              height: "100%",
+              borderRadius: "20px", // Радиус на изображении
+            }}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
             onError={(e) => {
@@ -106,8 +111,12 @@ const MobileScreenOfficeSilder = () => {
             justifyContent="center"
             alignItems="center"
             bg="Transparent"
+            borderRadius="20px" // Радиус для контейнера с фотографией
+            overflow="hidden" // Чтобы радиус не нарушался
           >
-            {photos[currentIndex]}
+            {React.cloneElement(photos[currentIndex], {
+              style: { borderRadius: "20px" }, // Задаем радиус для компонента SVG
+            })}
           </Flex>
         )}
 
@@ -154,6 +163,7 @@ const MobileScreenOfficeSilder = () => {
         transition="all 0.2s"
       />
     </Flex>
-    )
-}
-export default MobileScreenOfficeSilder
+  );
+};
+
+export default MobileScreenOfficeSilder;

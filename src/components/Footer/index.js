@@ -1,51 +1,37 @@
-import React from "react";
-import {
-    Flex,
-    Stack,
-    useBreakpointValue
-} from "@chakra-ui/react"
+import { Flex,Box, Container, Stack, Text, Link, Divider,  } from "@chakra-ui/react";
 
-import MobileScreenFooter from "./ResponsiveFooter";
-import {ReactComponent as FaceBookIcon} from "../../assets/svg/FaceBookIcon.svg"
-import {ReactComponent as InstagramIcon} from "../../assets/svg/Instagram.svg"
-import {ReactComponent as LinkedinIcon} from "../../assets/svg/Linkedin.svg"
 
-const LargeScreenFooter = () => {
-    return(
-        <Flex w="full" h="120px"  justifyContent="center" alignItems="center" bgColor="black">
-            <Flex alignItems="center" justify="center" w="full">
-        <Stack direction="row" spacing="1000px" >
-          <Flex
-            color="white"
-            fontSize="50px"
-            alignItems="center"
-            fontFamily="Jockey One"
-          >
-            LOGO
-          </Flex>
-          <Flex alignItems="center">
-            <Stack direction="row" spacing="10px">
-                <Flex><LinkedinIcon style={{width:"50px",height:"50px"}}/></Flex>
-                <Flex><InstagramIcon style={{width:"50px",height:"50px"}}/></Flex>
-                <Flex><FaceBookIcon style={{width:"50px",height:"50px"}}/></Flex>
-                <Flex justifyContent="center" alignItems="center">
-          </Flex>
-            </Stack>
-          </Flex>
-        </Stack>
-      </Flex>
-        </Flex>
-    )
-}
+import { ReactComponent as InstagramIcon } from "../../assets/svg/Instagram (1).svg";
+import { ReactComponent as FaceBookIconText } from "../../assets/svg/Facebooktext.svg";
+import { ReactComponent as LinkedinIcon } from "../../assets/svg/Linkedin.svg";
+import { useTranslation } from "react-i18next";
+
 
 const Footer = () => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+   const { i18n } = useTranslation();
   return (
-    
-    <Flex>
-         {isMobile ? <MobileScreenFooter/> : <LargeScreenFooter/>}
-    </Flex>
-  )
-}
+    <Box bg="#18181b" color="gray.200" py={6}>
+      <Container maxW="container.lg">
+        <Stack direction={{ base: "column", md: "row" }} justify="space-between" align="center">
+          <Text>&copy; {new Date().getFullYear()} IT Company. All rights reserved.</Text>
+          <Stack direction="row" spacing={4}>
+            <Link href="/about">{i18n.t("about")}</Link>
+            <Link href="/services">{i18n.t("services")}</Link>
+            <Link href="/">{i18n.t("contact_us")}</Link>
+          </Stack>
+          <Stack justifyContent="center" borderRadius="20px" direction="row" spacing={2} w="300px" bgColor="white">
+            <Flex as="button"><InstagramIcon style={{width:"90px",height:"40px"}}/></Flex>
+            <Flex as="button"><FaceBookIconText style={{width:"90px",height:"40px"}}/></Flex>
+            <Flex as="button"><LinkedinIcon style={{width:"80px",height:"40px"}}/></Flex>
+          </Stack>
+        </Stack>
+        <Divider my={4} borderColor="gray.700" />
+        <Text fontSize="sm" textAlign="center">
+          Made with ❤️ at "(company name)"
+        </Text>
+      </Container>
+    </Box>
+  );
+};
 
-export default Footer
+export default Footer;

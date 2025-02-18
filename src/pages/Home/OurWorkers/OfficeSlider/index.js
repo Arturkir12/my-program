@@ -47,7 +47,7 @@ const LargeScreenOfficeSlider = ({ photos = [] }) => {
 
           const timer = setTimeout(() => {
             setShowText(false); // Прячем текст через 4 секунды
-          }, 4000);
+          }, 3000);
 
           return () => clearTimeout(timer);
         }
@@ -93,7 +93,7 @@ const LargeScreenOfficeSlider = ({ photos = [] }) => {
 
       {/* Основной блок с фотографией */}
       <MotionBox
-        w={{ base: "300px", md: "500px" }}
+        w={{ base: "300px", md: "700px" }}
         h={{ base: "300px", md: "340px" }}
         overflow="hidden"
         borderRadius="20px"
@@ -129,18 +129,18 @@ const LargeScreenOfficeSlider = ({ photos = [] }) => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               position="absolute"
-              mt="-195px"
-              w="230px"
-              h="50px"
+              mt="-189px"
+              w="200px"
+              h="40px"
               fontFamily="Montserrat"
               border="2px solid white"
               transform="translate(-50%, -50%)"
-              fontSize="xl"
+              fontSize="14px"
               fontWeight="bold"
               color="white"
               bg="rgba(0, 0, 0, 0.6)"
               borderRadius="md"
-              ml="130px"
+              ml="250px"
               transition={{ duration: 0.5 }}
             >
               <Flex justifyContent="center" mt="10px" alignItems="center">

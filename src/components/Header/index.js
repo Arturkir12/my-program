@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Flex, Stack, useColorModeValue, Button, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { Flex, Stack, useColorModeValue, Button, Menu, MenuButton, MenuList, MenuItem, Link } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { useBreakpointValue } from "@chakra-ui/react";
 import MobileScreenHeader from "./ResponsiveHeader";
-
 import Flag from "react-world-flags";
-
-
-
+import { useNavigate } from "react-router-dom";
 
 const LargeScreenHeader = () => {
   const { i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const [isVisible, setIsVisible] = useState(true);
 
   const bgColor = useColorModeValue("rgba(234, 234, 234, 0.7)", "gray.800");
   const bgFilter = "blur(10px)";
@@ -22,28 +19,36 @@ const LargeScreenHeader = () => {
   const boxShadow = "md";
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      if (window.scrollY > lastScrollY && window.scrollY > 50) {
+        setIsVisible(false);
+      } else if (window.scrollY < lastScrollY || window.scrollY < 50) {
+        setIsVisible(true);
+      }
+
+      lastScrollY = window.scrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Функция переключения языка
   const toggleLanguage = (lang) => {
     i18n.changeLanguage(lang);
   };
 
-  // Динамическое определение флага
   const getFlagCode = () => {
     switch (i18n.language) {
       case "en":
-        return "US"; // Флаг США для английского
+        return "US";
       case "ru":
-        return "RU"; // Флаг России для русского
+        return "RU";
       default:
-        return "US"; // Можно добавить флаг по умолчанию
+        return "US";
     }
   };
 
@@ -57,8 +62,10 @@ const LargeScreenHeader = () => {
       borderBottom={isScrolled ? border : "none"}
       backdropFilter={isScrolled ? bgFilter : "none"}
       boxShadow={isScrolled ? boxShadow : "none"}
-      transition="background-color 0.3s, box-shadow 0.3s, border 0.3s, backdrop-filter 0.3s"
       zIndex="1000"
+      transform={isVisible ? "translateY(0)" : "translateY(-100%)"}
+      opacity={isVisible ? 1 : 0}
+      transition="transform 0.3s ease, opacity 0.3s ease, background-color 0.5s ease, box-shadow 0.5s ease"
     >
       <Flex alignItems="center">
         <Flex justifyContent="space-around" w="100vw">
@@ -66,31 +73,22 @@ const LargeScreenHeader = () => {
             color={isScrolled ? tColor : "white"}
             fontSize="50px"
             fontFamily="Jockey One"
+            as="button"
           >
-            LOGO
+            <Link href="/" textDecoration="none" _hover={{ textDecoration: "none" }}>
+              LOGO
+            </Link>
           </Flex>
           <Flex alignItems="center">
             <Stack direction="row" spacing="40px">
-              <Flex  _hover={{textDecoration:"underline"}} fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
-                {i18n.t("about")}
+              <Flex _hover={{ textDecoration: "underline" }} fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
+                <Link href="/about">{i18n.t("about")}</Link>
               </Flex>
-              <Flex  _hover={{textDecoration:"underline"}} fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
-                {i18n.t("contact_us")}
+              <Flex _hover={{ textDecoration: "underline" }} fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
+                <Link href="/contuct">{i18n.t("contact_us")}</Link>
               </Flex>
-              <Flex _hover={{textDecoration:"underline"}} fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
-                {i18n.t("careers")}
-              </Flex>
-              <Flex _hover={{textDecoration:"underline"}} fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
-                {i18n.t("services")}
-              </Flex>
-              <Flex _hover={{textDecoration:"underline"}} fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
-                {i18n.t("get_a_quote")}
-              </Flex>
-              <Flex _hover={{textDecoration:"underline"}} fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
-                {i18n.t("why_choose_us")}
-              </Flex>
-              <Flex _hover={{textDecoration:"underline"}} fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
-                {i18n.t("testimonials")}
+              <Flex _hover={{ textDecoration: "underline" }} fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
+                <Link href="/services">{i18n.t("services")}</Link>
               </Flex>
             </Stack>
           </Flex>
@@ -103,11 +101,11 @@ const LargeScreenHeader = () => {
                 fontSize="12px"
                 fontFamily="Montserrat"
                 color="white"
-                rightIcon={<Flag code={getFlagCode()} style={{ width: "20px", height: "15px",marginLeft:"20px" }} />}
+                rightIcon={<Flag code={getFlagCode()} style={{ width: "20px", height: "15px", marginLeft: "20px" }} />}
                 bgColor="#27272a"
                 _hover={{
-                  bgColor:"white",
-                  color:"#27272a"
+                  bgColor: "white",
+                  color: "#27272a",
                 }}
               >
                 {i18n.language.toUpperCase()}

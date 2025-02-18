@@ -1,13 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { Flex,Box,IconButton, Stack, useColorModeValue, Button, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import {
+  Flex,
+  Box,
+  IconButton,
+  Stack,
+  useColorModeValue,
+  Button,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Link,
+} from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { ReactComponent as MenuIcon } from "../../../assets/svg/Menu.svg";
 import { ReactComponent as MenuIconScrolled } from "../../../assets/svg/MenuScrolled.svg";
 import { CloseIcon } from "@chakra-ui/icons";
 import Flag from "react-world-flags";
-
+import { useNavigate } from "react-router-dom"; // Импортируем useNavigate
 
 const MobileScreenHeader = () => {
+  const { i18n } = useTranslation();
+  const navigate = useNavigate(); // Хук для перехода
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -17,7 +31,6 @@ const MobileScreenHeader = () => {
   const tColor = useColorModeValue("gray.800", "white");
   const defaultBg = "transparent";
   const boxShadow = "md";
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,14 +43,13 @@ const MobileScreenHeader = () => {
 
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = "hidden"; // Disable scrolling
+      document.body.style.overflow = "hidden"; // Отключаем прокрутку, когда меню открыто
     } else {
-      document.body.style.overflow = "auto"; // Enable scrolling again
+      document.body.style.overflow = "auto"; // Включаем прокрутку снова
     }
 
-    // Clean up on component unmount or menu close
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "auto"; // Сброс прокрутки при закрытии меню
     };
   }, [isMenuOpen]);
 
@@ -46,21 +58,27 @@ const MobileScreenHeader = () => {
   };
 
   const toggleLanguage = (lang) => {
-    i18n.changeLanguage(lang);
+    const currentPath = window.location.pathname; // Получаем текущий путь
+    i18n.changeLanguage(lang); // Меняем язык
+    navigate(currentPath); // Переходим на текущую страницу для обновления контента
   };
 
-  // Динамическое определение флага
   const getFlagCode = () => {
     switch (i18n.language) {
       case "en":
-        return "US"; // Флаг США для английского
+        return "US";
       case "ru":
-        return "RU"; // Флаг России для русского
+        return "RU";
       default:
         return "US"; // Можно добавить флаг по умолчанию
     }
   };
-  const { i18n } = useTranslation();
+
+  const handlenavigate = useNavigate();
+  const homepage = () => {
+    return handlenavigate("/");
+  };
+
   return (
     <>
       <Flex
@@ -81,6 +99,8 @@ const MobileScreenHeader = () => {
             fontSize="24px"
             fontWeight="bold"
             fontFamily="Jockey One"
+            onClick={homepage}
+            as="button"
           >
             LOGO
           </Box>
@@ -90,111 +110,71 @@ const MobileScreenHeader = () => {
             _hover={{ bgColor: "transparent" }}
             _active={{ bgColor: "transparent" }}
             onClick={toggleMenu}
-            icon={isMenuOpen ? (
-              <CloseIcon color="white" />
-            ) : isScrolled ? (
-              <MenuIconScrolled style={{ width: "24px", height: "24px" }} />
-            ) : (
-              <MenuIcon style={{ width: "24px", height: "24px" }} />
-            )}
+            icon={
+              isMenuOpen ? (
+                <CloseIcon color="white" />
+              ) : isScrolled ? (
+                <MenuIconScrolled style={{ width: "24px", height: "24px" }} />
+              ) : (
+                <MenuIcon style={{ width: "24px", height: "24px" }} />
+              )
+            }
           />
         </Flex>
       </Flex>
       {isMenuOpen && (
         <Flex
           position="fixed"
-          top="60px" 
+          top="60px"
           left="0"
           w="100vw"
-          h="calc(100vh - 60px)" 
+          h="calc(100vh - 60px)"
           bg="#18181b"
           zIndex="900"
           direction="column"
           justify="center"
         >
-          <Flex ml="20px">
+          <Flex ml="20px" mt="-200px">
             <Stack direction="column" spacing="10px">
-          <Flex
-            fontSize="20px"
-            color="white"
-            fontFamily="Roboto"
-            as="button"
-          >
-            {i18n.t("about")}
-          </Flex>
-          <Flex
-            fontSize="20px"
-            color="white"
-            fontFamily="Roboto"
-            as="button"
-          >
-            {i18n.t("contact_us")}
-          </Flex>
-          <Flex
-            fontSize="20px"
-            color="white"
-            fontFamily="Roboto"
-            as="button"
-          >
-            {i18n.t("careers")}
-          </Flex>
-          <Flex
-            fontSize="20px"
-            color="white"
-            fontFamily="Roboto"
-            as="button"
-          >
-            {i18n.t("services")}
-          </Flex>
-          <Flex
-            fontSize="20px"
-            color="white"
-            fontFamily="Roboto"
-            as="button"
-          >
-            {i18n.t("get_a_quote")}
-          </Flex>
-          <Flex
-            fontSize="20px"
-            color="white"
-            fontFamily="Roboto"
-            as="button"
-          >
-           {i18n.t("why_choose_us")}
-          </Flex>
-          <Flex
-            fontSize="20px"
-            color="white"
-            fontFamily="Roboto"
-            as="button"
-          >
-            {i18n.t("testimonials")}
-          </Flex>
-          <Flex mt="180px" alignItems="center">
-            <Menu>
-              <MenuButton
-                as={Button}
-                borderRadius="10px"
-                w="70px"
-                fontSize="12px"
-                fontFamily="Montserrat"
-                color="white"
-                rightIcon={<Flag code={getFlagCode()} style={{ width: "20px", height: "15px",marginLeft:"20px" }} />}
-                bgColor="#27272a"
-                _hover={{
-                  bgColor:"white",
-                  color:"#27272a"
-                }}
-              >
-                {i18n.language.toUpperCase()}
-              </MenuButton>
-              <MenuList>
-                <MenuItem onClick={() => toggleLanguage("en")}>English</MenuItem>
-                <MenuItem onClick={() => toggleLanguage("ru")}>Русский</MenuItem>
-              </MenuList>
-            </Menu>
-          </Flex>
-          </Stack>
+              <Flex fontSize="20px" color="white" fontFamily="Roboto" as="button">
+                <Link href="/about">{i18n.t("about")}</Link>
+              </Flex>
+              <Flex fontSize="20px" color="white" fontFamily="Roboto" as="button">
+                <Link href="/contact">{i18n.t("contact_us")}</Link>
+              </Flex>
+              <Flex fontSize="20px" color="white" fontFamily="Roboto" as="button">
+                <Link href="/services">{i18n.t("services")}</Link>
+              </Flex>
+              <Flex mt="380px" alignItems="center">
+                <Menu>
+                  <MenuButton
+                    as={Button}
+                    borderRadius="10px"
+                    w="70px"
+                    fontSize="12px"
+                    fontFamily="Montserrat"
+                    color="white"
+                    rightIcon={
+                      <Flag
+                        code={getFlagCode()}
+                        style={{ width: "20px", height: "15px", marginLeft: "20px" }}
+                      />
+                    }
+                    bgColor="#27272a"
+                    _hover={{
+                      bgColor: "white",
+                      color: "#27272a",
+                    }}
+                  >
+                    {i18n.language.toUpperCase()}
+                  </MenuButton>
+                  <MenuList>
+                    <MenuItem onClick={() => toggleLanguage("en")}>English</MenuItem>
+                    <MenuItem onClick={() => toggleLanguage("ru")}>Русский</MenuItem>
+                  </MenuList>
+                </Menu>
+              </Flex>
+            </Stack>
           </Flex>
         </Flex>
       )}
