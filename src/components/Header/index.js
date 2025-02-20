@@ -85,7 +85,7 @@ const LargeScreenHeader = () => {
                 <Link href="/about">{i18n.t("about")}</Link>
               </Flex>
               <Flex _hover={{ textDecoration: "underline" }} fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
-                <Link href="/contuct">{i18n.t("contact_us")}</Link>
+                <Link href="/contact">{i18n.t("contact_us")}</Link>
               </Flex>
               <Flex _hover={{ textDecoration: "underline" }} fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
                 <Link href="/services">{i18n.t("services")}</Link>

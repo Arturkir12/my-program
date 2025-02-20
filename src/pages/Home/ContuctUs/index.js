@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Button, Stack, useBreakpointValue } from "@chakra-ui/react";
+import { Flex, Button, Stack, useBreakpointValue,Link } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next"; // импортируем хук для перевода
 
 import { ReactComponent as Kub1 } from "../../../assets/svg/Kubek.svg";
@@ -80,8 +80,9 @@ const LargeScreenContuctUs = () => {
                         fontSize="13px"
                         boxShadow="0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06)"
                         _hover={{ bgColor: "white", color: "#9333ea", border: "1px solid #9333ea" }}
+                        onClick={() => window.location.href = "/contact"}
                       >
-                        {t("contact_us_section.more_info")}
+                       <Link href="/contact" textDecor="none"> {t("contact_us_section.more_info")}</Link>
                       </Button>
                     </Flex>
                     <Flex>

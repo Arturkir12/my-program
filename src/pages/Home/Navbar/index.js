@@ -36,8 +36,6 @@ const LargeScreenNavbar = () => {
       position="relative"
       overflow="hidden"
     >
-      {/* Перевернутая волна белого цвета */}
-
       <Stack direction="column" zIndex={2}>
         <Flex justify="center">
           <Flex>
@@ -86,8 +84,18 @@ const LargeScreenNavbar = () => {
                   </Flex>
                 </Stack>
               </Flex>
-              <Flex mt="320px">
-                <VideoComponent width="700px" height="700px" />
+              <Flex mt="320px" position="relative">
+                <Flex
+                  position="absolute"
+                  w="500px"
+                  h="500px"
+                  bgGradient="linear(to-b,rgb(174, 28, 232), white)"
+                  ml="80px"
+                  mt="-50px"
+                  zIndex={-1}
+                  filter="blur(300px)"
+                />
+                <VideoComponent width="700px" height="700px" zIndex={1} />
               </Flex>
             </Stack>
           </Flex>

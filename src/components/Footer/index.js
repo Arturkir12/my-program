@@ -17,7 +17,7 @@ const Footer = () => {
           <Stack direction="row" spacing={4}>
             <Link href="/about">{i18n.t("about")}</Link>
             <Link href="/services">{i18n.t("services")}</Link>
-            <Link href="/">{i18n.t("contact_us")}</Link>
+            <Link href="/contact">{i18n.t("contact_us")}</Link>
           </Stack>
           <Stack justifyContent="center" borderRadius="20px" direction="row" spacing={2} w="300px" bgColor="white">
             <Flex as="button"><InstagramIcon style={{width:"90px",height:"40px"}}/></Flex>
