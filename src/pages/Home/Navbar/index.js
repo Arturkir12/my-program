@@ -22,6 +22,13 @@ const LargeScreenNavbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+    const scrollDown = () => {
+    window.scrollBy({
+      top: 3200,  // Сколько пикселей вниз прокручиваем
+      behavior: "smooth",  // Плавная прокрутка
+    });
+  };
+
   return (
     <Flex
       transition="background-size 0.5s ease-in-out, background-position 0.5s ease-in-out"
@@ -78,6 +85,7 @@ const LargeScreenNavbar = () => {
                       fontFamily="Montserrat"
                       color="white"
                       bgColor="#18181b"
+                      onClick={scrollDown}
                     >
                       {t("navbar.start")}
                     </Button>

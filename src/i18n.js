@@ -79,6 +79,37 @@ i18n.use(initReactI18next).init({
           message: "Your Message",
           sending:"Sending...",
           send_message: "Send Message"
+        },
+        about_us_page:{
+          expert_teams:"We are a passionate IT company focused on delivering innovative technology solutions. Our team of experts is dedicated to providing high-quality services and solutions for your business needs.",
+          our_mission:"Our Mission",
+          our_mission_title:"Our mission is to empower businesses with cutting-edge technology, helping them stay ahead of the curve in an ever-evolving digital world. We believe in creating solutions that drive success and growth for our clients.",
+          meet_our_team:"Meet Our Team",
+          hayk_sargsyan_title:"I specialize in building dynamic, scalable, and responsive web applications. My technical background enables me to efficiently manage database systems, design user-friendly interfaces, and optimize performance across the full stack. Passionate about continuous learning and staying ahead of industry trends, I strive to deliver high-quality solutions that meet both user needs and business goals",
+          hayk_hovhanisyan_title:"I am a web developer with a year of experience in HTML, CSS, JavaScript, React, Next.js, Redux, and Chakra UI. I develop high-quality, productive, and responsive web applications. In my work, I focus on effective health management, improving productivity, and providing a great user experience. I am ready to use my knowledge to create successful projects.",
+          artur_kirakosyan_title:"I am a passionate and efficient Frontend Developer with expertise in creating dynamic, responsive, and user-friendly web interfaces. Proficient in modern technologies like React.js, HTML, CSS (Sass/SCSS), Chakra UI, and Material UI, I deliver visually appealing and highly functional web applications.",
+          vahe_martirosyan_title:"I specialize in building dynamic, scalable, and responsive web applications. My technical background enables me to efficiently manage database systems, design user-friendly interfaces, and optimize performance across the full stack. Passionate about continuous learning and staying ahead of industry trends, I strive to deliver high-quality solutions that meet both user needs and business goals",
+          more_info:"More information",
+          get_in_touch:"Get in Touch",
+          questions:"Have questions? Feel free to reach out to us for more information about our services. We're here to help you with your IT needs.",
+          contact_us:"Contact Us"
+        },
+        services_section:{
+          digital_services:"TAILORED DIGITAL SERVICES",
+          services_title:"Unlock your potential, anytime, anywhere.",
+          services_subtitle:"In today’s fast-paced world, efficiency and seamless collaboration are essential. Our digital services are designed to simplify your IT needs, offering a tailored experience that enhances productivity and fosters better teamwork. We provide a comprehensive suite of services that centralize your tools, optimize workflows, and improve communication. Our services are customized to fit your unique business needs and are accessible at any time, from anywhere, ensuring you stay connected and efficient."
+        },
+        our_services_page:{
+          our_services:"Our Services",
+          our_services_title:"We offer a range of IT services to help your business grow and succeed. From web and mobile development to IT consulting, we’ve got you covered.",
+          web:"Web Development",
+          web_title:"Custom website development using modern technologies like React, Angular, and Node.js.",
+          mobile:"Mobile App Development",
+          mobile_title:"Mobile application development for both iOS and Android platforms using Swift, Kotlin, and React Native.",
+          it:"IT Consulting",
+          it_title:"Providing expert advice and support on IT strategy, infrastructure, and digital transformation.",
+          why_choose_us:"Why Choose Us",
+          why_title:"With years of experience and a team of dedicated professionals, we provide high-quality solutions tailored to your business needs."
         }
       },
     },
@@ -158,7 +189,40 @@ i18n.use(initReactI18next).init({
           phone_number:"Номер телефона",
           message: "Ваше сообщение",
           send_message: "Отправить сообщение"
+        },
+        about_us_page:{
+          expert_teams:"Мы - увлеченная ИТ-компания, специализирующаяся на предоставлении инновационных технологических решений. Наша команда экспертов нацелена на предоставление высококачественных услуг и решений для удовлетворения потребностей вашего бизнеса.",
+          our_mission:"Наша миссия",
+          our_mission_title:"Наша миссия заключается в том, чтобы предоставлять предприятиям передовые технологии, помогая им оставаться на шаг впереди в постоянно развивающемся цифровом мире. Мы верим в создание решений, которые способствуют успеху и росту наших клиентов.",
+          meet_our_team:"Познакомьтесь с нашей командой",
+          hayk_sargsyan_title:"Я специализируюсь на создании динамичных, масштабируемых и адаптивных веб-приложений. Мое техническое образование позволяет мне эффективно управлять системами баз данных, разрабатывать удобные интерфейсы и оптимизировать производительность всего стека. Увлеченный непрерывным обучением и стремящийся идти в ногу с тенденциями отрасли, я стремлюсь предоставлять высококачественные решения, которые отвечают как потребностям пользователей, так и бизнес-целям",
+          hayk_hovhanisyan_title:"Я веб-разработчик с годичным опытом работы в HTML, CSS, JavaScript, React, Next.js, Redux и Chakra UI. Я разрабатываю высококачественные, продуктивные и адаптивные веб-приложения. В своей работе я уделяю особое внимание эффективному управлению здоровьем, повышению производительности труда и предоставлению удобного пользовательского опыта. Я готов использовать свои знания для создания успешных проектов.",
+          artur_kirakosyan_title:"Я увлеченный и эффективный Front-end разработчик, обладающий опытом в создании динамичных, отзывчивых и удобных для пользователя веб-интерфейсов. Владея современными технологиями, такими как React.js, HTML, CSS (Sass/SCSS), Chakra UI и Material UI, я создаю визуально привлекательные и высокофункциональные веб-приложения.",
+          vahe_martirosyan_title:"Я специализируюсь на создании динамичных, масштабируемых и адаптивных веб-приложений. Мое техническое образование позволяет мне эффективно управлять системами баз данных, разрабатывать удобные интерфейсы и оптимизировать производительность всего стека. Увлеченный непрерывным обучением и стремящийся идти в ногу с тенденциями отрасли, я стремлюсь предоставлять высококачественные решения, которые отвечают как потребностям пользователей, так и бизнес-целям",
+          more_info:"Дополнительная информация",
+          get_in_touch:"Cвязаться",
+          questions:"У вас есть вопросы? Не стесняйтесь обращаться к нам за дополнительной информацией о наших услугах. Мы готовы помочь вам в решении ваших ИТ-задач.",
+          contact_us:"Cвязаться с нами"
+        },
+        services_section:{
+          digital_services:"СПЕЦИАЛИЗИРОВАННЫЕ ЦИФРОВЫЕ СЕРВИСЫ",
+          services_title:"Раскройте свой потенциал в любое время и в любом месте.",
+          services_subtitle:"В современном быстро меняющемся мире эффективность и бесперебойная совместная работа имеют важнейшее значение. Наши цифровые сервисы разработаны для упрощения ваших ИТ-задач, предлагая индивидуальный подход, повышающий производительность и способствующий более эффективной командной работе. Мы предоставляем полный набор услуг, которые позволяют централизовать ваши инструменты, оптимизировать рабочие процессы и улучшить коммуникацию. Наши сервисы адаптированы к вашим уникальным бизнес-потребностям и доступны в любое время и из любого места."
+        },
+        our_services_page:{
+          our_services: "Наши услуги",
+          our_services_title: "Мы предлагаем широкий спектр IT-услуг, которые помогут вашему бизнесу расти и добиваться успеха. От разработки веб-сайтов и мобильных приложений до IT-консалтинга — мы покроем все ваши потребности.",
+          web: "Веб-разработка",
+          web_title: "Разработка индивидуальных веб-сайтов с использованием современных технологий, таких как React, Angular и Node.js.",
+          mobile: "Разработка мобильных приложений",
+          mobile_title: "Разработка мобильных приложений для платформ iOS и Android с использованием Swift, Kotlin и React Native.",
+          it: "IT-консалтинг",
+          it_title: "Предоставление экспертных консультаций и поддержки по IT-стратегии, инфраструктуре и цифровой трансформации.",
+          why_choose_us: "Почему выбирают нас",
+          why_title: "С многолетним опытом и командой преданных своему делу профессионалов мы предоставляем высококачественные решения, соответствующие потребностям вашего бизнеса."
+          
         }
+        
       },
     },
   },

@@ -25,34 +25,33 @@ const MobileScreenHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const bgColor = useColorModeValue("rgba(234, 234, 234, 0.7)", "#1a202c");
-  const bgFilter = "blur(10px)";
-  const border = useColorModeValue("1px solid white", "1px solid #2d3748");
-  const tColor = useColorModeValue("gray.800", "white");
-  const defaultBg = "transparent";
-  const boxShadow = "md";
+ const bgColor = useColorModeValue("rgba(234, 234, 234, 0.7)", "gray.800");
+   const bgFilter = "blur(10px)";
+   const border = useColorModeValue("1px solid white");
+   const tColor = useColorModeValue("gray.800", "white");
+   const defaultBg = "transparent";
+   const boxShadow = "md";
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden"; // Отключаем прокрутку, когда меню открыто
-    } else {
-      document.body.style.overflow = "auto"; // Включаем прокрутку снова
-    }
-
-    return () => {
-      document.body.style.overflow = "auto"; // Сброс прокрутки при закрытии меню
-    };
-  }, [isMenuOpen]);
-
+      let lastScrollY = window.scrollY;
+  
+      const handleScroll = () => {
+        setIsScrolled(window.scrollY > 50);
+  
+        if (window.scrollY > lastScrollY && window.scrollY > 50) {
+          setIsVisible(false);
+        } else if (window.scrollY < lastScrollY || window.scrollY < 50) {
+          setIsVisible(true);
+        }
+  
+        lastScrollY = window.scrollY;
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+  
+  
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -78,6 +77,7 @@ const MobileScreenHeader = () => {
   const homepage = () => {
     return handlenavigate("/");
   };
+  const [isVisible, setIsVisible] = useState(true);
 
   return (
     <>
@@ -90,8 +90,10 @@ const MobileScreenHeader = () => {
         borderBottom={isScrolled ? border : "none"}
         backdropFilter={isScrolled ? bgFilter : "none"}
         boxShadow={isScrolled ? boxShadow : "none"}
-        transition="background-color 0.3s, box-shadow 0.3s, border 0.3s, backdrop-filter 0.3s"
         zIndex="1000"
+        transform={isVisible ? "translateY(0)" : "translateY(-100%)"}
+        opacity={isVisible ? 1 : 0}
+        transition="transform 0.3s ease, opacity 0.3s ease, background-color 0.5s ease, box-shadow 0.5s ease"
       >
         <Flex alignItems="center" w="full" px={4} justifyContent="space-between">
           <Box
@@ -134,7 +136,7 @@ const MobileScreenHeader = () => {
           direction="column"
           justify="center"
         >
-          <Flex ml="20px" mt="-200px">
+          <Flex ml="20px">
             <Stack direction="column" spacing="10px">
               <Flex fontSize="20px" color="white" fontFamily="Roboto" as="button">
                 <Link href="/about">{i18n.t("about")}</Link>
@@ -145,7 +147,7 @@ const MobileScreenHeader = () => {
               <Flex fontSize="20px" color="white" fontFamily="Roboto" as="button">
                 <Link href="/services">{i18n.t("services")}</Link>
               </Flex>
-              <Flex mt="380px" alignItems="center">
+              <Flex mt="300px" alignItems="center">
                 <Menu>
                   <MenuButton
                     as={Button}

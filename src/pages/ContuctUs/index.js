@@ -103,7 +103,7 @@ const ContactUsPage = () => {
 
   return (
     <Flex justifyContent="center" alignItems="center" bg="linear-gradient(135deg, white -300%, rgb(111, 19, 203) 40%, white 300%)" py="50px" px={{ base: "10px", md: "50px" }} color="white">
-      <Stack direction="column" w="full" mt="100px">
+      <Stack direction="column" w="full" mt="20px">
         <Box w="full" textAlign="center" mb="50px">
           <Heading fontFamily="Roboto" fontWeight="600" fontSize={{ base: "40px", md: "50px" }} color="white" textShadow="0 0 0px #fafafa, 0 0 4px #fafafa">
             {t("contact_us")}

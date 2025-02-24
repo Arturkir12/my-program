@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import { useBreakpointValue } from "@chakra-ui/react";
 import MobileScreenHeader from "./ResponsiveHeader";
 import Flag from "react-world-flags";
-import { useNavigate } from "react-router-dom";
 
 const LargeScreenHeader = () => {
   const { i18n } = useTranslation();
@@ -68,7 +67,7 @@ const LargeScreenHeader = () => {
       transition="transform 0.3s ease, opacity 0.3s ease, background-color 0.5s ease, box-shadow 0.5s ease"
     >
       <Flex alignItems="center">
-        <Flex justifyContent="space-around" w="100vw">
+        <Flex justifyContent="space-around" w="140vw">
           <Flex
             color={isScrolled ? tColor : "white"}
             fontSize="50px"
@@ -81,18 +80,17 @@ const LargeScreenHeader = () => {
           </Flex>
           <Flex alignItems="center">
             <Stack direction="row" spacing="40px">
-              <Flex _hover={{ textDecoration: "underline" }} fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
-                <Link href="/about">{i18n.t("about")}</Link>
+              <Flex fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
+                <Link _hover={{textDecoration:"none"}} href="/about">{i18n.t("about")}</Link>
               </Flex>
-              <Flex _hover={{ textDecoration: "underline" }} fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
-                <Link href="/contact">{i18n.t("contact_us")}</Link>
+              <Flex fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
+                <Link _hover={{textDecoration:"none"}} href="/contact">{i18n.t("contact_us")}</Link>
               </Flex>
-              <Flex _hover={{ textDecoration: "underline" }} fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
-                <Link href="/services">{i18n.t("services")}</Link>
+              <Flex fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
+                <Link _hover={{textDecoration:"none"}} href="/services">{i18n.t("services")}</Link>
               </Flex>
             </Stack>
-          </Flex>
-          <Flex alignItems="center">
+            <Flex ml="100px" alignItems="center">
             <Menu>
               <MenuButton
                 as={Button}
@@ -116,6 +114,8 @@ const LargeScreenHeader = () => {
               </MenuList>
             </Menu>
           </Flex>
+          </Flex>
+          
         </Flex>
       </Flex>
     </Flex>

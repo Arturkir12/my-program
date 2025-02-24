@@ -28,7 +28,7 @@ const LargeScreenContuctUs = () => {
         </Flex>
         <Flex>
           <Stack direction="column">
-            <Flex justifyContent="center" mt="10px" w="full" color="#db2777" fontWeight="500" fontSize="30px" fontFamily="Montserrat">
+            <Flex justifyContent="center" mt="10px" w="full" color="#db2777" fontWeight="500" fontSize="30px" >
               {t("contact_us_section.title")}
             </Flex>
             <Flex alignItems="center" position="relative">

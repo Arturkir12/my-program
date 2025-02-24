@@ -1,6 +1,9 @@
 import React from "react";
 import { Box, Heading, Text, Stack, Flex, Button, Image, Grid, GridItem, Link } from "@chakra-ui/react";
 import { ReactComponent as Personicon } from "../../assets/svg/person.svg";
+import { useTranslation } from "react-i18next";
+
+
 
 const teamMembers = [
   {
@@ -30,31 +33,32 @@ const teamMembers = [
 ];
 
 const AboutUsPage = () => {
+  const { i18n } = useTranslation();
   return (
     <Box bg="linear-gradient(135deg, white -300%, rgb(111, 19, 203) 40%, white 300%)" py="50px" px={{ base: "10px", md: "50px" }} color="white">
-      <Flex mt="100px">
+      <Flex mt="20px">
         <Stack direction="column">
           <Box textAlign="center" mb="50px">
             <Heading mb="10px" fontFamily="Roboto" fontWeight="600" fontSize={{ base: "40px", md: "50px" }} color="white" textShadow="0 0 0px #fafafa, 0 0 4px #fafafa">
-              About Us
+            {i18n.t("about")}
             </Heading>
             <Text fontSize="lg" color="gray.400" maxW="800px" mx="auto">
-              We are a passionate IT company focused on delivering innovative technology solutions. Our team of experts is dedicated to providing high-quality services and solutions for your business needs.
+            {i18n.t("about_us_page.expert_teams")}
             </Text>
           </Box>
 
           <Box textAlign="center" mb="50px">
             <Heading as="h2" size="xl" color="white" mb={4}>
-              Our Mission
+            {i18n.t("about_us_page.our_mission")}
             </Heading>
             <Text fontSize="lg" color="gray.400" maxW="800px" mx="auto">
-              Our mission is to empower businesses with cutting-edge technology, helping them stay ahead of the curve in an ever-evolving digital world. We believe in creating solutions that drive success and growth for our clients.
+            {i18n.t("about_us_page.our_mission_title")}
             </Text>
           </Box>
 
           <Box textAlign="center" mb="50px">
             <Heading as="h2" size="xl" color="white" mb={6}>
-              Meet Our Team
+            {i18n.t("about_us_page.meet_our_team")}
             </Heading>
             <Grid justifyItems="center" justifyContent="center" templateColumns={{ base: "1fr", md: "1fr 1fr 1fr" }} gap={6}>
               {teamMembers.map((member, index) => (
@@ -74,7 +78,7 @@ const AboutUsPage = () => {
                       onClick={() => window.location.href = member.link} // Перенаправление при клике
                     >
                       <Link _hover={{ textDecoration: "none" }} href={member.link} isExternal>
-                           More information
+                      {i18n.t("about_us_page.more_info")}
                       </Link>
                     </Button>
                   </Box>
@@ -85,13 +89,13 @@ const AboutUsPage = () => {
 
           <Box textAlign="center" mt="50px">
             <Heading as="h2" size="xl" color="white" mb={4}>
-              Get in Touch
+            {i18n.t("about_us_page.get_in_touch")}
             </Heading>
             <Text fontSize="lg" color="gray.400" maxW="800px" mx="auto" mb={6}>
-              Have questions? Feel free to reach out to us for more information about our services. We're here to help you with your IT needs.
+            {i18n.t("about_us_page.questions")}
             </Text>
             <Button onClick={() => window.location.href = "/contact"} fontFamily="roboto" bgColor="white" >
-             <Link href="/contact" _hover={{textDecor:"none"}}>Contact Us</Link> 
+             <Link href="/contact" _hover={{textDecor:"none"}}>{i18n.t("about_us_page.contact_us")}</Link> 
             </Button>
           </Box>
         </Stack>

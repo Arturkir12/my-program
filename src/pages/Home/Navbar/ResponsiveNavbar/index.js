@@ -25,6 +25,12 @@ const MobileScreenNavbar = () => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
       }, []);
+      const scrollDown = () => {
+        window.scrollBy({
+          top: 3800,  // Сколько пикселей вниз прокручиваем
+          behavior: "smooth",  // Плавная прокрутка
+        });
+      };
     return(
         <Flex 
         transition="background-size 0.5s ease-in-out, background-position 0.5s ease-in-out"
@@ -53,7 +59,7 @@ const MobileScreenNavbar = () => {
             </Stack>
             </Flex>
             <Flex justifyContent="center" mt="80px">
-              <Button  _hover={{bgColor:"white",color:"#18181b"}}  fontSize="13px" w="130px" fontWeight="500" fontFamily="Montserrat"   color="white" bgColor="#18181b">{t("navbar.start")}</Button>
+              <Button onClick={scrollDown}  _hover={{bgColor:"white",color:"#18181b"}}  fontSize="13px" w="130px" fontWeight="500" fontFamily="Montserrat"   color="white" bgColor="#18181b">{t("navbar.start")}</Button>
             </Flex>
           </Stack>
         </Flex>

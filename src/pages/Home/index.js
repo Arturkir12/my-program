@@ -9,6 +9,10 @@ import Contuctus from "./ContuctUs";
 import Trust from "./Trust";
 import OurWorkers from "./OurWorkers";
 import AmazingTeam from "./AmazingTeam";
+import ContactUsPage from "../ContuctUs";
+import AboutUsPage from "../AboutUs";
+import ServicesPage from "../Services";
+import OurServices from "./OurServices";
 
 
 
@@ -17,10 +21,16 @@ const Home = () => {
         <Flex justifyContent="center" w="full">
             <Stack direction="column" w="full" spacing="0px">
                 <Navbar/>
-                <Marketing/>
-                <Contuctus/>
                 <AmazingTeam/>
-                <Trust/>
+                <AboutUsPage/>
+                
+                {/* <Contuctus/> */}
+                
+                <Marketing/>
+                <ContactUsPage/>
+                <OurServices/>
+                <ServicesPage/>
+                {/* <Trust/> */}
             </Stack>
         </Flex>
     )
