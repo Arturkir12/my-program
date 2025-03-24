@@ -35,7 +35,7 @@ const teamMembers = [
 const AboutUsPage = () => {
   const { i18n } = useTranslation();
   return (
-    <Box bg="linear-gradient(135deg, white -300%, rgb(111, 19, 203) 40%, white 300%)" py="50px" px={{ base: "10px", md: "50px" }} color="white">
+    <Box bg="linear-gradient(135deg, white -600%, rgb(0, 0, 0) 40%, white 400%)" py="50px" px={{ base: "10px", md: "50px" }} color="white">
       <Flex mt="20px">
         <Stack direction="column">
           <Box textAlign="center" mb="50px">

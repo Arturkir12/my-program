@@ -6,6 +6,8 @@ import {
 import InputMask from "react-input-mask";
 import { useTranslation } from "react-i18next";
 
+
+
 const countryPhoneCodes = {
   "Armenia": { code: "+374", maxLength: 8, mask: "+374 99 999999" },
   "USA": { code: "+1", maxLength: 10, mask: "+1 (999) 999-9999" },
@@ -102,7 +104,7 @@ const ContactUsPage = () => {
   };
 
   return (
-    <Flex justifyContent="center" alignItems="center" bg="linear-gradient(135deg, white -300%, rgb(111, 19, 203) 40%, white 300%)" py="50px" px={{ base: "10px", md: "50px" }} color="white">
+    <Flex justifyContent="center" zIndex="1" alignItems="center" bg="linear-gradient(135deg, white -600%, rgb(0, 0, 0) 40%, white 400%)" py="50px" px={{ base: "10px", md: "50px" }} color="white">
       <Stack direction="column" w="full" mt="20px">
         <Box w="full" textAlign="center" mb="50px">
           <Heading fontFamily="Roboto" fontWeight="600" fontSize={{ base: "40px", md: "50px" }} color="white" textShadow="0 0 0px #fafafa, 0 0 4px #fafafa">
@@ -112,7 +114,7 @@ const ContactUsPage = () => {
             {t("contact_us_page.title")}
           </Text>
         </Box>
-
+        <Stack direction="row">
         <Flex justifyContent="center" w="full">
           <Flex justifyContent="center" alignItems="center" w={{ base: "full", md: "700px" }} bgColor="#27272a" borderRadius="20px" boxShadow="lg" p="20px">
             <form onSubmit={handleSubmit} style={{ width: "100%" }}>
@@ -179,6 +181,14 @@ const ContactUsPage = () => {
             </form>
           </Flex>
         </Flex>
+        {/* <Flex>
+          <Stack direction="column">
+            <Flex justifyContent="center" alignItems="center"  borderRadius="40px" h="237px" bgColor="white" color="black" w="500px">Order</Flex>
+            <Flex justifyContent="center" alignItems="center"  ml="100px" borderRadius="40px" h="237px" bgColor="white" color="black" w="500px">Produce</Flex>
+            <Flex justifyContent="center" alignItems="center"  borderRadius="40px" h="237px" bgColor="white" color="black" w="500px">Deliver</Flex>
+          </Stack>
+        </Flex> */}
+        </Stack>
       </Stack>
     </Flex>
   );

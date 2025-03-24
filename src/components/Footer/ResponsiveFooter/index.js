@@ -15,8 +15,8 @@ const MobileScreenFooter = () => {
         <Stack direction="row" justify="space-between" align="center">
           <Stack direction="column">
           <Stack mt="30px" direction="column" spacing={4}>
-            <Flex fontSize="20px" color="#db2777" fontWeight="700" fontFamily="Roboto">Navigation</Flex>
-            <Stack direction="column">
+            <Flex fontSize="20px" color="#67e8f9" fontWeight="700" fontFamily="Roboto">NAVIGATION</Flex>
+            <Stack direction="column" fontFamily="Montserrat">
             <Link href="/about">{i18n.t("about")}</Link>
             <Link href="/services">{i18n.t("services")}</Link>
             <Link href="/contact">{i18n.t("contact_us")}</Link>
@@ -24,11 +24,11 @@ const MobileScreenFooter = () => {
           </Stack>
           </Stack>
           <Stack textAlign="right" mt="30px" direction="column" spacing={4}>
-            <Flex fontSize="20px" color="#db2777" fontWeight="700" fontFamily="Roboto" ml="22px">Contacts</Flex>
-            <Stack direction="column">
+            <Flex fontSize="20px" color="#67e8f9" fontWeight="700" fontFamily="Roboto" ml="10px">CONTACT</Flex>
+            <Stack direction="column" fontFamily="Montserrat">
             <Flex>+374 ** *** ***</Flex>
             <Flex>+374 ** *** ***</Flex>
-            <Flex ml="18px">Street name</Flex>
+            <Flex ml="0px">Street name</Flex>
             </Stack>
           </Stack>
           

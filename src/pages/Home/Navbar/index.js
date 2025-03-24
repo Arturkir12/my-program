@@ -3,15 +3,16 @@ import { Flex, Stack, Button, useBreakpointValue } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import MobileScreenNavbar from "./ResponsiveNavbar";
 import VideoComponent from "../NavbarVideo";
+import FlipText from "./FlipText";
 
 const LargeScreenNavbar = () => {
   const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
 
   const gradientStart =
-    "linear-gradient(135deg, white -300%, rgb(111, 19, 203) 40%, white 300%)";
-  const gradientEnd =
-    "linear-gradient(130deg, rgb(111, 19, 203) 40%, white 300%, white -300%)";
+    "linear-gradient(135deg, white -300%, rgb(11, 80, 109) 40%, white 300%)";
+  // const gradientEnd =
+  //   "linear-gradient(130deg, rgb(16, 101, 137) 40%, white 300%, white -300%)";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,19 +23,18 @@ const LargeScreenNavbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-    const scrollDown = () => {
+  const scrollDown = () => {
     window.scrollBy({
-      top: 3200,  // Сколько пикселей вниз прокручиваем
-      behavior: "smooth",  // Плавная прокрутка
+      top: 3200,
+      behavior: "smooth",
     });
   };
 
   return (
     <Flex
       transition="background-size 0.5s ease-in-out, background-position 0.5s ease-in-out"
-      background={isScrolled ? gradientEnd : gradientStart}
+      background={gradientStart}
       backgroundSize="200% 200%"
-      backgroundPosition={isScrolled ? "100% 100%" : "0% 0%"}
       direction="column"
       w="full"
       justifyContent="center"
@@ -55,16 +55,7 @@ const LargeScreenNavbar = () => {
                 alignItems="center"
               >
                 <Stack direction="column" spacing="0px">
-                  <Flex
-                    letterSpacing="0px"
-                    w="500px"
-                    fontFamily="Roboto"
-                    fontWeight="900"
-                    fontSize="40px"
-                    color="white"
-                  >
-                    {t("navbar.build_future")}
-                  </Flex>
+                  <FlipText /> 
                   <Flex
                     fontFamily="Montserrat"
                     w="440px"
@@ -95,11 +86,11 @@ const LargeScreenNavbar = () => {
               <Flex mt="320px" position="relative">
                 <Flex
                   position="absolute"
-                  w="500px"
-                  h="500px"
-                  bgGradient="linear(to-b,rgb(174, 28, 232), white)"
-                  ml="80px"
-                  mt="-50px"
+                  w="900px"
+                  h="900px"
+                  bgGradient="linear(to-b,rgb(1, 238, 255), white)"
+                  ml="200px"
+                  mt="-190px"
                   zIndex={-1}
                   filter="blur(300px)"
                 />

@@ -9,7 +9,7 @@ const LargeScreenAmazingTeam = () => {
   return (
     <Flex justifyContent="center" w="full" h="400" bgColor="#18181b" alignItems="center">
       <Stack direction="column">
-        <Flex justify="center" color="#db2777" fontWeight="500" fontSize="16px" fontFamily="Montserrat">
+        <Flex justify="center" color="#67e8f9" fontWeight="700" fontSize="16px" fontFamily="Montserrat">
           {t("amazing_team.about")}
         </Flex>
         <Flex fontFamily="Roboto" fontWeight="600" justify="center" fontSize="30px" color="white" textShadow="0 0 0px #fafafa, 0 0 4px #fafafa">

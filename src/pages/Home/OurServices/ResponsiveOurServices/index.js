@@ -22,8 +22,8 @@ const MobileScreenOurServices = () => {
     {/* Заголовок */}
     <Flex
       justify="center"
-      color="#db2777"
-      fontWeight="500"
+      color="#67e8f9"
+      fontWeight="700"
       fontSize={{ base: "12px", md: "16px" }}
       fontFamily="Montserrat"
       textAlign="center"

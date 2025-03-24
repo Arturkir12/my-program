@@ -15,20 +15,20 @@ const LargeScreenFooter = () => {
         <Stack direction={{ base: "column", md: "row" }} justify="space-between" align="center">
           <Stack direction="column">
           <Stack mt="30px" direction="column" spacing={4}>
-            <Flex fontSize="20px" color="#db2777" fontWeight="700" fontFamily="Roboto">NAVIGATION</Flex>
+            <Flex fontSize="20px" color="#67e8f9" fontWeight="700" fontFamily="Roboto">NAVIGATION</Flex>
             <Stack direction="column">
-            <Link _hover={{textDecor:"none"}} href="/about">{i18n.t("about")}</Link>
-            <Link _hover={{textDecor:"none"}}  textDecor="none" href="/services">{i18n.t("services")}</Link>
-            <Link _hover={{textDecor:"none"}}  textDecor="none" href="/contact">{i18n.t("contact_us")}</Link>
+            <Link _hover={{textDecor:"none"}} fontFamily="Montserrat" href="/about">{i18n.t("about")}</Link>
+            <Link _hover={{textDecor:"none"}} fontFamily="Montserrat"  textDecor="none" href="/services">{i18n.t("services")}</Link>
+            <Link _hover={{textDecor:"none"}} fontFamily="Montserrat"  textDecor="none" href="/contact">{i18n.t("contact_us")}</Link>
             </Stack>
           </Stack>
           </Stack>
           <Stack textAlign="right" mt="30px" direction="column" spacing={4}>
-            <Flex fontSize="20px" color="#db2777" fontWeight="700" fontFamily="Roboto" >CONTACTS</Flex>
-            <Stack textAlign="right" direction="column">
+            <Flex fontSize="20px" color="#67e8f9" fontWeight="700" fontFamily="Roboto" >CONTACTS</Flex>
+            <Stack fontFamily="Montserrat" textAlign="right" direction="column">
             <Flex>+374 ** *** ***</Flex>
             <Flex>+374 ** *** ***</Flex>
-            <Flex ml="18px">Street name</Flex>
+            <Flex ml="0px">Street name</Flex>
             </Stack>
           </Stack>
           

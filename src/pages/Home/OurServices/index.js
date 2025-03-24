@@ -9,7 +9,7 @@ const LargeScreenOurServices = () => {
     <Flex  justifyContent="center" alignItems="center" bgColor="#18181b" w="full" h="400px">
       <Stack direction="column"  textAlign="center">
         <Box>
-          <Flex justify="center" color="#db2777" fontWeight="500" fontSize="16px" fontFamily="Montserrat">
+          <Flex justify="center"color="#67e8f9" fontWeight="700" fontSize="16px" fontFamily="Montserrat">
           {i18n.t("services_section.digital_services")}
           </Flex>
         </Box>

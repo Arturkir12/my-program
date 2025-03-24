@@ -1,7 +1,14 @@
 import React from "react";
 import {
     Flex,
-    Stack
+    Stack,
+    Text,
+    Heading,
+    VStack,
+    Icon,
+    Box,
+    Container,
+    SimpleGrid
 } from "@chakra-ui/react"
 import Navbar from "./Navbar";
 import Marketing from "./OurMarketing";
@@ -27,9 +34,10 @@ const Home = () => {
                 {/* <Contuctus/> */}
                 
                 <Marketing/>
-                <ContactUsPage/>
-                <OurServices/>
                 <ServicesPage/>
+                <OurServices/>
+                
+                <ContactUsPage/>
                 {/* <Trust/> */}
             </Stack>
         </Flex>

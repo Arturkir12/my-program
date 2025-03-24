@@ -80,17 +80,17 @@ const LargeScreenHeader = () => {
           </Flex>
           <Flex alignItems="center">
             <Stack direction="row" spacing="40px">
-              <Flex fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
-                <Link _hover={{textDecoration:"none"}} href="/about">{i18n.t("about")}</Link>
+              <Flex fontFamily="Montserrat" as="button" color={isScrolled ? tColor : "white"}>
+                <Link fontSize="18px" _hover={{textDecoration:"none"}} href="/about">{i18n.t("about")}</Link>
               </Flex>
-              <Flex fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
-                <Link _hover={{textDecoration:"none"}} href="/contact">{i18n.t("contact_us")}</Link>
+              <Flex fontFamily="Montserrat" as="button" color={isScrolled ? tColor : "white"}>
+                <Link fontSize="18px" _hover={{textDecoration:"none"}} href="/contact">{i18n.t("contact_us")}</Link>
               </Flex>
-              <Flex fontFamily="Roboto" as="button" color={isScrolled ? tColor : "white"}>
-                <Link _hover={{textDecoration:"none"}} href="/services">{i18n.t("services")}</Link>
+              <Flex fontFamily="Montserrat" as="button" color={isScrolled ? tColor : "white"}>
+                <Link fontSize="18px" _hover={{textDecoration:"none"}} href="/services">{i18n.t("services")}</Link>
               </Flex>
             </Stack>
-            <Flex ml="100px" alignItems="center">
+            <Flex ml="80px" alignItems="center">
             <Menu>
               <MenuButton
                 as={Button}
