@@ -14,10 +14,7 @@ const MobileScreenNavbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     
       const gradientStart =
-        "linear-gradient(135deg, white -300%, rgb(111, 19, 203) 40%, white 300%)";
-      const gradientEnd =
-        "linear-gradient(130deg, rgb(111, 19, 203) 40%, white 300%, white -300%)";
-    
+        "linear-gradient(135deg, white -300%, rgb(30, 117, 124) 40%, white 300%)";
       useEffect(() => {
         const handleScroll = () => {
           setIsScrolled(window.scrollY > 50);
@@ -35,9 +32,7 @@ const MobileScreenNavbar = () => {
     return(
         <Flex 
         transition="background-size 0.5s ease-in-out, background-position 0.5s ease-in-out"
-        background={isScrolled ? gradientEnd : gradientStart}
-        backgroundSize="200% 200%"
-        backgroundPosition={isScrolled ? "100% 100%" : "0% 0%"}
+        background={gradientStart}
         direction="column"
         w="full"
         justifyContent="center"
