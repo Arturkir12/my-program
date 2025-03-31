@@ -7,6 +7,7 @@ import {
 
 import { useTranslation } from "react-i18next";
 import VideoComponent from "../../NavbarVideo";
+import FlipText from "../FlipText";
 
 const MobileScreenNavbar = () => {
   const { t } = useTranslation();
@@ -41,7 +42,7 @@ const MobileScreenNavbar = () => {
         w="full"
         justifyContent="center"
         alignItems="center"
-        h="670px"
+        h="680px"
         >
         <Stack direction="column">
         <Flex
@@ -53,9 +54,20 @@ const MobileScreenNavbar = () => {
         >
           <Stack direction="column" spacing="0px">
             <Flex justifyContent="center" w="full">
-            <Stack direction="column">
-            <Flex  justifyContent="center" textAlign="center" letterSpacing="0px"  fontFamily="Roboto" fontWeight="900" fontSize="17px"  color="white" >{t("navbar.build_future")}</Flex>
-            <Flex justifyContent="center" textAlign="center" fontFamily="Montserrat"  fontWeight="900" background="none" textShadow="none" fontSize="13px" color="#18181b">{t("navbar.welcome")}</Flex>
+            <Stack direction="column" mt="100px">
+           <FlipText/>
+           <Flex
+           fontFamily="Montserrat"
+           w="340px"
+           ml="30px"
+           fontWeight="900"
+           background="none"
+           textShadow="none"
+           fontSize="17px"
+           color="#18181b"
+           >
+          {t("navbar.welcome")}
+            </Flex>
             </Stack>
             </Flex>
             <Flex justifyContent="center" mt="80px">

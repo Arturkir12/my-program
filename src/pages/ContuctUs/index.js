@@ -122,25 +122,25 @@ const ContactUsPage = () => {
                 <Stack direction={{ base: "column", md: "row" }} spacing={4}>
                   <FormControl id="name" isRequired>
                     <FormLabel color="white">{t("contact_us_page.name")}</FormLabel>
-                    <Input border="none" type="text" name="name" value={formData.name} onChange={handleChange} bg="gray.700" color="white" placeholder={t("contact_us_page.your_name")} />
+                    <Input border="0.5px solid #67e8f9" type="text" name="name" value={formData.name} onChange={handleChange}  bg="#111111" color="white" placeholder={t("contact_us_page.your_name")} />
                   </FormControl>
 
                   <FormControl id="surname" isRequired>
                     <FormLabel color="white">{t("contact_us_page.surname")}</FormLabel>
-                    <Input border="none"  type="text" name="surname" value={formData.surname} onChange={handleChange} bg="gray.700" color="white" placeholder={t("contact_us_page.surname")} />
+                    <Input border="0.5px solid #67e8f9"  type="text" name="surname" value={formData.surname} onChange={handleChange} bg="#111111" color="white" placeholder={t("contact_us_page.surname")} />
                   </FormControl>
                 </Stack>
 
                 <Stack direction="row" spacing={4}>
                   <FormControl id="email" isRequired>
                     <FormLabel color="white">{t("contact_us_page.email")}</FormLabel>
-                    <Input border="none"  type="email" name="email" value={formData.email} onChange={handleChange} bg="gray.700" color="white" placeholder={t("contact_us_page.your_email")} />
+                    <Input border="0.5px solid #67e8f9" type="email" name="email" value={formData.email} onChange={handleChange} bg="#111111" color="white" placeholder={t("contact_us_page.your_email")} />
                   </FormControl>
                 </Stack>
 
                 <FormControl id="country" isRequired>
                   <FormLabel color="white">{t("contact_us_page.country")}</FormLabel>
-                  <Select border="none" name="country" value={formData.country} onChange={handleCountryChange} bg="gray.700" color="white">
+                  <Select border="0.5px solid #67e8f9" name="country" value={formData.country} onChange={handleCountryChange} bg="#111111" color="white">
                     <option value="" disabled>{t("contact_us_page.select_your_country")}</option>
                     {Object.keys(countryPhoneCodes).map((country) => (
                       <option style={{ backgroundColor: "black" }} key={country} value={country}>
@@ -152,14 +152,14 @@ const ContactUsPage = () => {
 
                 <FormControl id="phone" isRequired>
                   <FormLabel color="white">{t("contact_us_page.phone_number")}</FormLabel>
-                  <InputMask border="none" mask={getPhoneMask(formData.country)} value={formData.phone} onChange={handleChange} disabled={isPhoneDisabled}>
-                    {(inputProps) => <Input {...inputProps} type="tel" name="phone" bg="gray.700" color="white" />}
+                  <InputMask border="0.5px solid #67e8f9" mask={getPhoneMask(formData.country)} value={formData.phone} onChange={handleChange} disabled={isPhoneDisabled}>
+                    {(inputProps) => <Input {...inputProps} type="tel" name="phone" bg="#111111" color="white" />}
                   </InputMask>
                 </FormControl>
 
                 <FormControl id="subject" isRequired>
                   <FormLabel color="white">{t("contact_us_page.subject")}</FormLabel>
-                  <Select border="none" name="subject" value={formData.subject} onChange={handleChange} bg="gray.700" color="white">
+                  <Select border="0.5px solid #67e8f9" name="subject" value={formData.subject} onChange={handleChange} bg="#111111" color="white">
                     <option value="" disabled>{t("contact_us_page.select_subject")}</option>
                     <option style={{ backgroundColor: "black" }} value="General Inquiry">{t("contact_us_page.general_inquiry")}</option>
                     <option style={{ backgroundColor: "black" }} value="Support">{t("contact_us_page.support")}</option>
@@ -171,7 +171,7 @@ const ContactUsPage = () => {
 
                 <FormControl id="message" isRequired>
                   <FormLabel color="white">{t("contact_us_page.message")}</FormLabel>
-                  <Textarea border="none" name="message" value={formData.message} onChange={handleChange} bg="gray.700" color="white" placeholder={t("contact_us_page.message")} rows={6} />
+                  <Textarea border="0.5px solid #67e8f9" name="message" value={formData.message} onChange={handleChange} bg="#111111" color="white" placeholder={t("contact_us_page.message")} rows={6} />
                 </FormControl>
 
                 <Button type="submit" color="white" isLoading={isSubmitting} loadingText={t("contact_us_page.sending")} bgColor="#4ade80" variant="solid" size="lg" mt="20px">

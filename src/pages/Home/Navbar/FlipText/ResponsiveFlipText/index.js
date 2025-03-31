@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
 import { Box, Flex, Stack } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-import MobileScreenFlipText from "./ResponsiveFlipText";
-import { useBreakpointValue } from "@chakra-ui/react";
 
 const words = [
   "flip_text.create",
   "flip_text.develop",
   "flip_text.design",
-  "flip_text.transform"
 ];
 
-const LargeScreenFlipText = () => {
+const MobileScreenFlipText = () => {
   const [index, setIndex] = useState(0);
   const { t } = useTranslation();
 
@@ -23,11 +20,11 @@ const LargeScreenFlipText = () => {
   }, []);
 
   return (
-    <Box textAlign="center">
-      <Stack direction="column">
+    <Box textAlign="center" >
+      <Stack  ml="25px" direction="column">
         <Flex>
           <Stack direction="row">
-            <Flex color="white" lineHeight="40px" fontSize="50px">
+            <Flex color="white" lineHeight="40px" fontSize="37px">
               {t("flip_text.we")}{" "}
             </Flex>
             <Box
@@ -36,7 +33,7 @@ const LargeScreenFlipText = () => {
               position="relative"
               overflow="hidden"
               lineHeight="40px"
-              w="500px"
+              w="280px"
             >
               {words.map((word, i) => (
                 <Box
@@ -45,7 +42,7 @@ const LargeScreenFlipText = () => {
                   fontWeight="bold"
                   position="absolute"
                   color="#22d3ee"
-                  fontSize="50px"
+                  fontSize="37px"
                   w="100%"
                   opacity={index === i ? 1 : 0}
                   transform={
@@ -59,7 +56,7 @@ const LargeScreenFlipText = () => {
             </Box>
           </Stack>
         </Flex>
-        <Flex color="white" lineHeight="60px" fontSize="50px" w="400px" textAlign="left">
+        <Flex color="white" lineHeight="60px" fontSize="37px" w="400px" textAlign="left">
           {t("flip_text.your_future")}
         </Flex>
       </Stack>
@@ -68,9 +65,5 @@ const LargeScreenFlipText = () => {
 }
 
 
-const FlipText = () => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
-  return <Flex>{isMobile ? <MobileScreenFlipText /> : <LargeScreenFlipText />}</Flex>;
-};
 
-export default FlipText;
+export default MobileScreenFlipText

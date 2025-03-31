@@ -8,23 +8,25 @@ const MobileScreenVideoComponent = () => {
   const videoRef = useRef(null);
 
   return (
-    <Flex  w="full" h="100px"justifyContent="center" alignItems="center">
-      <Box
-       w="full"
-       mt="199px"
-      >
-        <video
-          ref={videoRef}    
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src={NavbarVideo} type="video/mp4" />
-          Ваш браузер не поддерживает видео.
-        </video>
-      </Box>
-    </Flex>
+    // <Flex  w="full" h="100px"justifyContent="center" alignItems="center">
+    //   <Box
+    //    w="full"
+    //    mt="199px"
+    //   >
+    //     <video
+    //       ref={videoRef}    
+    //       autoPlay
+    //       muted
+    //       loop
+    //       playsInline
+    //     >
+    //       <source src={NavbarVideo} type="video/mp4" />
+    //       Ваш браузер не поддерживает видео.
+    //     </video>
+    //   </Box>
+    // </Flex>
+    <>
+    </>
   );
 };
 
