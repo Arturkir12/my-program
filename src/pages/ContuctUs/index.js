@@ -31,7 +31,7 @@ const ContactUsPage = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isPhoneDisabled, setIsPhoneDisabled] = useState(true); // Состояние для блокировки номера телефона
+  const [isPhoneDisabled, setIsPhoneDisabled] = useState(true); 
   const toast = useToast();
   const { t } = useTranslation();
 
@@ -55,7 +55,7 @@ const ContactUsPage = () => {
       country: selectedCountry,
       phone: countryPhoneCodes[selectedCountry]?.code || "",
     });
-    setIsPhoneDisabled(selectedCountry === ""); // Если страна не выбрана, блокируем поле телефона
+    setIsPhoneDisabled(selectedCountry === ""); 
   };
 
   const handleSubmit = async (e) => {
@@ -63,8 +63,8 @@ const ContactUsPage = () => {
     setIsSubmitting(true);
 
     try {
-      // Имитация асинхронной операции (например, вызов API)
-      await new Promise((resolve) => setTimeout(resolve, 2000)); // Задержка 2 секунды
+
+      await new Promise((resolve) => setTimeout(resolve, 2000)); 
 
       toast({
         title: "Message Sent",
@@ -82,7 +82,7 @@ const ContactUsPage = () => {
         isClosable: true,
       });
     } finally {
-      setIsSubmitting(false); // Завершаем загрузку после попытки отправки
+      setIsSubmitting(false); 
     }
 
     setFormData({
@@ -91,7 +91,6 @@ const ContactUsPage = () => {
     });
   };
 
-  // Перевод для стран
   const translatedCountries = {
     "Armenia": t("contact_us_page.armenia"),
     "USA": t("contact_us_page.usa"),

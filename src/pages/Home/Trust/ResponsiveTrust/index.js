@@ -1,10 +1,10 @@
 import React from "react";
 import { Flex, Stack } from "@chakra-ui/react";
-import { useTranslation } from "react-i18next"; // импортируем хук для перевода
+import { useTranslation } from "react-i18next"; 
 import { ReactComponent as CircleIcon } from "../../../../assets/svg/Circle.svg";
 
 const MobileScreenTrust = () => {
-  const { t } = useTranslation(); // инициализируем переводчик
+  const { t } = useTranslation(); 
 
   return (
     <Flex
@@ -22,7 +22,7 @@ const MobileScreenTrust = () => {
         spacing={{ base: "40px", md: "100px" }}
         align="center"
       >
-        {/* Информационный блок */}
+      
         <Flex
           justifyContent="center"
           w={{ base: "90%", md: "550px" }}
@@ -38,7 +38,7 @@ const MobileScreenTrust = () => {
           py={{ base: "30px", md: "20px" }}
         >
           <Stack direction="column" spacing="20px">
-            {/* Заголовок */}
+     
             <Flex
               textDecoration="underline"
               textDecorationColor="#a41752"
@@ -51,7 +51,7 @@ const MobileScreenTrust = () => {
               {t("trust_section.title")}
             </Flex>
 
-            {/* Описание */}
+      
             <Flex justifyContent="center">
               <Flex
                 fontSize={{ base: "12px", md: "14px" }}
@@ -64,7 +64,7 @@ const MobileScreenTrust = () => {
               </Flex>
             </Flex>
 
-            {/* Список преимуществ */}
+           
             <Flex color="#18181b" fontSize={{ base: "18px", md: "20px" }} ml="10px" fontFamily="Roboto">
               {t("trust_section.our_experts")}
             </Flex>
@@ -115,12 +115,12 @@ const MobileScreenTrust = () => {
               </Flex>
             </Stack>
 
-            {/* Заключение */}
+    
             <Flex justifyContent="center" textAlign="center" fontSize="16px" fontWeight="500" mt="20px">
               {t("trust_section.confidence")}
             </Flex>
 
-            {/* Подпись */}
+       
             <Flex justifyContent="center" mt="20px">
               <Stack direction="column" spacing="5px" align="center">
                 <Flex fontWeight="700" fontFamily="Montserrat">
@@ -134,7 +134,7 @@ const MobileScreenTrust = () => {
           </Stack>
         </Flex>
 
-        {/* Фоновая графика */}
+
         <Flex
           position="absolute"
           top={{ base: "10%", md: "20%" }}

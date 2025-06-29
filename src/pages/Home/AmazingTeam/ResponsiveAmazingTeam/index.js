@@ -1,9 +1,9 @@
 import React from "react";
 import { Flex, Stack } from "@chakra-ui/react";
-import { useTranslation } from "react-i18next"; // импортируем хук для перевода
+import { useTranslation } from "react-i18next";
 
 const MobileScreenAmazingTeam = () => {
-  const { t } = useTranslation(); // инициализируем переводчик
+  const { t } = useTranslation(); 
 
   return (
     <Flex
@@ -16,7 +16,7 @@ const MobileScreenAmazingTeam = () => {
       py={{ base: "20px", md: "0" }}
     >
       <Stack direction="column" align="center" px={{ base: "20px", md: "0" }}>
-        {/* Заголовок "ABOUT OUR TEAM AND OFFICE" */}
+     
         <Flex
           justify="center"
           color="#67e8f9"
@@ -28,7 +28,7 @@ const MobileScreenAmazingTeam = () => {
           {t("amazing_team.about")}
         </Flex>
 
-        {/* Основной заголовок */}
+       
         <Flex
           fontFamily="Roboto"
           fontWeight="600"
@@ -41,7 +41,7 @@ const MobileScreenAmazingTeam = () => {
           {t("amazing_team.title")}
         </Flex>
 
-        {/* Описание команды */}
+       
         <Flex
           w={{ base: "90%", md: "700px" }}
           textAlign="center"

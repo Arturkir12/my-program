@@ -49,7 +49,7 @@ const LargeScreenInfiniteSlider = () => {
     let scrollStep = 1;
 
     const scroll = () => {
-      if (!sliderRef.current) return; // Дополнительная проверка
+      if (!sliderRef.current) return;
       if (!isPaused) {
         sliderRef.current.scrollLeft += scrollStep;
         if (sliderRef.current.scrollLeft >= sliderRef.current.scrollWidth / 2) {

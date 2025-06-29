@@ -1,11 +1,11 @@
 import React from "react";
 import { Flex, Stack, useBreakpointValue } from "@chakra-ui/react";
-import { useTranslation } from "react-i18next"; // импортируем хук для перевода
+import { useTranslation } from "react-i18next"; 
 import { ReactComponent as CircleIcon } from "../../../assets/svg/Circle.svg";
 import MobileScreenTrust from "./ResponsiveTrust";
 
 const LargeScreenTrust = () => {
-  const { t } = useTranslation(); // инициализируем переводчик
+  const { t } = useTranslation(); 
 
   return (
     <Flex

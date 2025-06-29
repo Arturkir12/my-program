@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, IconButton, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Иконки для навигации
+
 import { ReactComponent as ChevronRightIcon } from "../../../../../assets/svg/chevron-right.svg";
 import { ReactComponent as ChevronLeftIcon } from "../../../../../assets/svg/chevron-left.svg";
 
@@ -10,7 +10,7 @@ import { ReactComponent as OfficePhoto1 } from "../../../../../assets/svg/Office
 import { ReactComponent as OfficePhoto2 } from "../../../../../assets/svg/OfficePhoto2.svg";
 import { ReactComponent as OfficePhoto3 } from "../../../../../assets/svg/OfficePhoto3.svg";
 
-// Анимационные компоненты Framer Motion
+
 const MotionBox = motion(Box);
 const MotionText = motion(Text);
 
@@ -23,7 +23,7 @@ const MobileScreenOfficeSilder = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showText, setShowText] = useState(false);
 
-  // Размеры элементов в зависимости от ширины экрана
+
   const iconSize = useBreakpointValue({ base: "30px", md: "40px" });
 
   const handleLeftClick = () => {
@@ -76,12 +76,12 @@ const MobileScreenOfficeSilder = () => {
         transition="all 0.2s"
       />
 
-      {/* Основной блок с фотографией */}
+
       <MotionBox
         w="300px"
         h="300px"
         overflow="hidden"
-        borderRadius="20px" // Радиус контейнера
+        borderRadius="20px" 
         position="relative"
         initial={{ opacity: 0.8, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -95,13 +95,13 @@ const MobileScreenOfficeSilder = () => {
               objectFit: "cover",
               width: "100%",
               height: "100%",
-              borderRadius: "20px", // Радиус на изображении
+              borderRadius: "20px", 
             }}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
             onError={(e) => {
-              e.target.onerror = null; // Убираем бесконечные вызовы
-              e.target.src = "/placeholder-image.png"; // Путь к fallback-изображению
+              e.target.onerror = null; 
+              e.target.src = "/placeholder-image.png"; 
             }}
           />
         ) : (
@@ -111,11 +111,11 @@ const MobileScreenOfficeSilder = () => {
             justifyContent="center"
             alignItems="center"
             bg="Transparent"
-            borderRadius="20px" // Радиус для контейнера с фотографией
-            overflow="hidden" // Чтобы радиус не нарушался
+            borderRadius="20px" 
+            overflow="hidden" 
           >
             {React.cloneElement(photos[currentIndex], {
-              style: { borderRadius: "20px" }, // Задаем радиус для компонента SVG
+              style: { borderRadius: "20px" }, 
             })}
           </Flex>
         )}

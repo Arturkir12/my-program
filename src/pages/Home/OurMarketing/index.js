@@ -1,10 +1,10 @@
 import React from "react";
 import { Flex, Stack, Box, useBreakpointValue } from "@chakra-ui/react";
-import { useTranslation } from "react-i18next"; // импортируем хук для перевода
+import { useTranslation } from "react-i18next"; 
 import MobileScreenOurMarketing from "./ResponsiveOurMarketing";
 
 const LargeScreenOurMarketing = () => {
-  const { t } = useTranslation(); // инициализируем переводчик
+  const { t } = useTranslation(); 
 
   return (
     <Flex  justifyContent="center" alignItems="center" bgColor="#18181b" w="full" h="400px">

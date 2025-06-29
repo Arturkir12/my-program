@@ -20,7 +20,7 @@ const MotionText = motion(Text);
 
 const LargeScreenGoogleMaps = () => {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.none, // Укажите API-ключ здесь
+    googleMapsApiKey: process.env.none,
   });
 
   const [map, setMap] = React.useState(null);
@@ -39,7 +39,7 @@ const LargeScreenGoogleMaps = () => {
 
   useEffect(() => {
     const onScroll = () => {
-      if (hasScrolled) return; // Если текст уже был показан, ничего не делаем
+      if (hasScrolled) return; 
 
       const mapElement = document.getElementById("google-map");
       if (mapElement) {
@@ -48,10 +48,10 @@ const LargeScreenGoogleMaps = () => {
 
         if (isVisible) {
           setShowText(true);
-          setHasScrolled(true); // Фиксируем, что текст был показан
+          setHasScrolled(true); 
 
           const timer = setTimeout(() => {
-            setShowText(false); // Прячем текст через 3 секунды
+            setShowText(false); 
           }, 4000);
 
           return () => clearTimeout(timer);

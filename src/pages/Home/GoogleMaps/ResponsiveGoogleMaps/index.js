@@ -8,7 +8,7 @@ const MobileScreenGoogleMaps = () => {
 
 const MotionText = motion(Text);
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY, // Убедитесь, что API-ключ в .env файле
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY, 
   });
 
   const [showText, setShowText] = useState(false);

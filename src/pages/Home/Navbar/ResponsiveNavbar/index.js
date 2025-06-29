@@ -25,8 +25,8 @@ const MobileScreenNavbar = () => {
       }, []);
       const scrollDown = () => {
         window.scrollBy({
-          top: 3800,  // Сколько пикселей вниз прокручиваем
-          behavior: "smooth",  // Плавная прокрутка
+          top: 3800, 
+          behavior: "smooth",  
         });
       };
     return(

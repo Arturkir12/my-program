@@ -19,7 +19,7 @@ const MobileScreenOurMarketing = () => {
   py={{ base: "20px", md: "0" }}
 >
   <Stack direction="column"  px="4">
-    {/* Заголовок */}
+ 
     <Flex
       justify="center"
       color="#67e8f9"
@@ -31,7 +31,7 @@ const MobileScreenOurMarketing = () => {
       {t("our_marketing.title")}
     </Flex>
 
-    {/* Основной текст */}
+    
     <Flex
       w={{ base: "full", md: "800px" }}
       textAlign="center"

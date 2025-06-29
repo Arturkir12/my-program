@@ -2,27 +2,27 @@ import React, { useState, useEffect } from "react";
 import { Box, IconButton, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Иконки для навигации
+
 import { ReactComponent as ChevronRightIcon } from "../../../../assets/svg/chevron-right.svg";
 import { ReactComponent as ChevronLeftIcon } from "../../../../assets/svg/chevron-left.svg";
 
-// Примеры SVG-компонентов
+
 import { ReactComponent as OfficePhoto1 } from "../../../../assets/svg/OfficePhoto.svg";
 import { ReactComponent as OfficePhoto2 } from "../../../../assets/svg/OfficePhoto2.svg";
 import { ReactComponent as OfficePhoto3 } from "../../../../assets/svg/OfficePhoto3.svg";
 
-// Компонент для мобильной версии
+
 import MobileScreenOfficeSlider from "./ResponsiveOfficeSlider";
 
-// Анимационные элементы Framer Motion
+
 const MotionBox = motion(Box);
 const MotionText = motion(Text);
 
-// Основной компонент для десктопной версии слайдера
+
 const LargeScreenOfficeSlider = ({ photos = [] }) => {
-  const [currentIndex, setCurrentIndex] = useState(0); // Индекс текущей фотографии
-  const [hasScrolled, setHasScrolled] = useState(false); // Проверка, был ли текст показан
-  const [showText, setShowText] = useState(false); // Отображение текста
+  const [currentIndex, setCurrentIndex] = useState(0); 
+  const [hasScrolled, setHasScrolled] = useState(false); 
+  const [showText, setShowText] = useState(false); 
 
   const handleLeftClick = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? photos.length - 1 : prevIndex - 1));
@@ -46,7 +46,7 @@ const LargeScreenOfficeSlider = ({ photos = [] }) => {
           setHasScrolled(true);
 
           const timer = setTimeout(() => {
-            setShowText(false); // Прячем текст через 4 секунды
+            setShowText(false); 
           }, 3000);
 
           return () => clearTimeout(timer);
@@ -91,7 +91,7 @@ const LargeScreenOfficeSlider = ({ photos = [] }) => {
         boxShadow="md"
       />
 
-      {/* Основной блок с фотографией */}
+
       <MotionBox
         w={{ base: "300px", md: "700px" }}
         h={{ base: "300px", md: "340px" }}
@@ -121,7 +121,7 @@ const LargeScreenOfficeSlider = ({ photos = [] }) => {
           </Flex>
         )}
 
-        {/* Анимация текста */}
+
         <AnimatePresence>
           {showText && (
             <MotionText
